@@ -10,6 +10,7 @@ var mov_direction: Vector2 = Vector2.ZERO # A variable that determines the direc
 var velocity: Vector2 = Vector2.ZERO # A variable that determines the velocity/speed of the character
 
 
+# warning-ignore:unused_argument
 func _physics_process(delta: float) -> void: # moves the character using move and lside with velocity and applies friction
 	velocity = move_and_slide(velocity) # Velocity is controlled by the move and slide vectors
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)

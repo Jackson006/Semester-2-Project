@@ -15,6 +15,7 @@ func _physics_process(delta: float) -> void: # moves the character using move an
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION)
 	
 	
-	
-func move() -> void:
-	pass
+func move() -> void: # 
+	mov_direction = mov_direction.normalized() # normalises the movement direction
+	velocity += mov_direction * acceleration # adds acceleration in the direction of the movement to the velocity
+	velocity = velocity.clamped(max_speed) # Clamps the max speed

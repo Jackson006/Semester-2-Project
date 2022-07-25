@@ -16,4 +16,5 @@ func _physics_process(delta: float) -> void: # moves the character using move an
 	
 	
 	
-	
+func move() -> void:
+	pass

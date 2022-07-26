@@ -5,17 +5,17 @@ class_name FiniteStateMachine # The class name allows the inheriting of function
 
 var states: Dictionary = {} # This variable stores all the states 
 var previous_state: int = -1 # This variable stores the anterior state
-var state: int = -1 setget set_state # The variable state stores the current state
+var state: int = -1 setget set_state # The variable state stores the current state. Also has the setter function 
 
 onready var parent: Character = get_parent()
 onready var animation_player: AnimationPlayer = parent.get_node("AnimationPlayer")
 
 
 func _physics_process(delta: float) -> void:
-	if state != -1:
-		_state_logic(delta)
-		var transition: int = _get_transition()
-		if transition != -1:
+	if state != -1: # checks if the state is not null
+		_state_logic(delta) # calls the function _state_logic
+		var transition: int = _get_transition() # gets the state transition
+		if transition != -1: # if the transisition returns a state, this sets the state with the function set_state
 			set_state(transition)
 
 
@@ -31,7 +31,7 @@ func _add_state(new_state: String) -> void:
 	states[new_state] = states.size()
 	
 	
-func set_state(new_state: int) -> void:
+func set_state(new_state: int) -> void: # Calls the function _exit_state, updates the previous_state, states varables, anf calls the function _enter_state
 	_exit_state(state)
 	previous_state = state
 	state = new_state

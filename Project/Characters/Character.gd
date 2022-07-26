@@ -6,6 +6,8 @@ const FRICTION: float= 0.15 # Controls the character's friction with the floor
 export(int) var acceleration: int = 40 # The character's acceleration value
 export(int) var max_speed: int = 100 # The character's maximum speed
 
+onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite") # stores the AnimatedSprite node. This variable is used to flip the sprites
+
 var mov_direction: Vector2 = Vector2.ZERO # A variable that determines the direction the character moves in
 var velocity: Vector2 = Vector2.ZERO # A variable that determines the velocity/speed of the character
 

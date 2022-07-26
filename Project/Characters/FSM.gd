@@ -1,7 +1,7 @@
 extends Node
 class_name FiniteStateMachine
 
-var states: Dictionary = {}
+var states: Dictionary = {} 
 var previous_state: int = -1
 var state: int = -1 setget set_state
 

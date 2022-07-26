@@ -1,9 +1,11 @@
 extends Node
-class_name FiniteStateMachine
+class_name FiniteStateMachine # The class name allows the inheriting of functions and other variables
 
-var states: Dictionary = {} 
-var previous_state: int = -1
-var state: int = -1 setget set_state
+# This script controls automated behaviours and controls different states
+
+var states: Dictionary = {} # This variable stores all the states 
+var previous_state: int = -1 # This variable stores the anterior state
+var state: int = -1 setget set_state # The variable state stores the current state
 
 onready var parent: Character = get_parent()
 onready var animation_player: AnimationPlayer = parent.get_node("AnimationPlayer")

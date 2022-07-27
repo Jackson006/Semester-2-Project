@@ -20,3 +20,10 @@ func _get_transition() -> int:
 			if parent.velocity.length() < 10:
 				return states.Idle
 	return -1
+	
+func _enter_state(_previous_state: int, new_state: int) -> void:
+	match new_state:
+		states.Idle:
+			animation_player.play("Idle")
+		states.move:
+			animation_player.play("Move")

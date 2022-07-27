@@ -9,7 +9,7 @@ func _ready() -> void:
 	
 func _state_logic(_delta: float) -> void:
 	parent.get_input()
-	parent.Move()
+	parent.move()
 	
 func _get_transition() -> int:
 	match state:

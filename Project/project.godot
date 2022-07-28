@@ -26,7 +26,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Semester 2 Project"
+config/name="The Binding of Trevor"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 

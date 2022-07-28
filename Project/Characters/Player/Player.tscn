@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_spritesheet.png" type="Texture" id=2]
@@ -66,6 +66,9 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 7.08651, 7.72628 )
 
 [sub_resource type="Animation" id=14]
 resource_name = "Idle"
@@ -162,6 +165,10 @@ script = ExtResource( 5 )
 frames = SubResource( 13 )
 animation = "Idle"
 frame = 4
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2( 0.330551, 0.550917 )
+shape = SubResource( 17 )
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/Idle = SubResource( 14 )

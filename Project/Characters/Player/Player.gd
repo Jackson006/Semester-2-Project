@@ -1,6 +1,7 @@
 extends Character
 
 onready var sword: Node2D = get_node("Sword") # gets the sword node
+onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void: #stores the direction of the mouse relative to the player

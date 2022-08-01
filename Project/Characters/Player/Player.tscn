@@ -128,6 +128,8 @@ rotation = -0.785398
 texture = ExtResource( 8 )
 offset = Vector2( 5, -4 )
 
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="1"]
+
 [node name="AnimationPlayer" parent="." index="4"]
 anims/Idle = ExtResource( 2 )
 anims/Move = ExtResource( 3 )

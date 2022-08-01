@@ -160,6 +160,8 @@ offset = Vector2( 5, -4 )
 anims/RESET = SubResource( 17 )
 anims/attack = ExtResource( 9 )
 
+[node name="SlashSprite" type="Sprite" parent="Sword" index="2"]
+
 [node name="AnimationPlayer" parent="." index="4"]
 anims/Idle = ExtResource( 2 )
 anims/Move = ExtResource( 3 )

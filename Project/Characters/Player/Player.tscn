@@ -120,3 +120,5 @@ shape = SubResource( 16 )
 anims/Idle = ExtResource( 2 )
 anims/Move = ExtResource( 3 )
 anims/RESET = SubResource( 15 )
+
+[node name="Sword" type="Node2D" parent="." index="4"]

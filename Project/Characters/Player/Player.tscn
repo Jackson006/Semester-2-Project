@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Player/idle.tres" type="Animation" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_spritesheet.png" type="Texture" id=7]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/weapon_sword_1.png" type="Texture" id=8]
 [ext_resource path="res://Characters/Playerattack.tres" type="Animation" id=9]
+[ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slash_effect_anim_spritesheet.png" type="Texture" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -156,11 +157,14 @@ rotation = -0.785398
 texture = ExtResource( 8 )
 offset = Vector2( 5, -4 )
 
-[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="1"]
+[node name="SlashSprite" type="Sprite" parent="Sword" index="1"]
+position = Vector2( 18, 0 )
+texture = ExtResource( 10 )
+hframes = 3
+
+[node name="SwordAnimationPlayer" type="AnimationPlayer" parent="Sword" index="2"]
 anims/RESET = SubResource( 17 )
 anims/attack = ExtResource( 9 )
-
-[node name="SlashSprite" type="Sprite" parent="Sword" index="2"]
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/Idle = ExtResource( 2 )

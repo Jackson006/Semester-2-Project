@@ -109,7 +109,6 @@ frame = 0
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 0.330551, 0.550917 )
-shape = null
 
 [node name="AnimationPlayer" parent="." index="3"]
 anims/Idle = ExtResource( 2 )

@@ -70,7 +70,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=16]
-radius = 6.0
+radius = 4.0
 
 [sub_resource type="Animation" id=15]
 length = 0.001
@@ -111,7 +111,7 @@ animation = "idle"
 frame = 0
 
 [node name="CollisionShape2D" parent="." index="2"]
-position = Vector2( 0.330551, 0.550917 )
+position = Vector2( 0, 3 )
 shape = SubResource( 16 )
 
 [node name="AnimationPlayer" parent="." index="3"]

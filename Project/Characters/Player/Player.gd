@@ -1,6 +1,6 @@
 extends Character
 
-onready var sword: Node2D = get_node("Sword")
+onready var sword: Node2D = get_node("Sword") # gets the sword node
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void: #stores the direction of the mouse relative to the player
@@ -12,6 +12,8 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		animated_sprite.flip_h = false
 	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true
+		
+	sword.rotation = mouse_direction.angle() # updates the rotation of the sword using the angle of the mouse's direction
 		
 		
 func get_input() -> void: # This function is called to get the player's input

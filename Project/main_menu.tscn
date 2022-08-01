@@ -14,8 +14,6 @@ margin_right = 482.0
 margin_bottom = 14.0
 
 [node name="Button" type="Button" parent="VBoxContainer"]
-anchor_top = 0.582
-anchor_bottom = 0.604
 margin_top = 18.0
 margin_right = 482.0
 margin_bottom = 38.0
@@ -23,8 +21,6 @@ text = "play"
 flat = true
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
-anchor_top = 0.587
-anchor_bottom = 0.639
 margin_top = 42.0
 margin_right = 482.0
 margin_bottom = 62.0
@@ -32,8 +28,6 @@ text = "settings"
 flat = true
 
 [node name="Button3" type="Button" parent="VBoxContainer"]
-anchor_top = 0.656
-anchor_bottom = 0.677
 margin_top = 66.0
 margin_right = 482.0
 margin_bottom = 86.0

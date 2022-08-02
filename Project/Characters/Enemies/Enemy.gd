@@ -3,7 +3,7 @@ class_name Enemy, "res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/gobli
 
 var path: PoolVector2Array # stores an array of points to the player 
 
-onready var navigation: Navigation = get_tree().current_scene.get_node("Navigation")
+onready var navigation: Navigation2D = get_tree().current_scene.get_node("Navigation2D")
 onready var player: KinematicBody2D = get_tree().current_scene.get_node("Player")
 
 func chase() -> void:
@@ -29,5 +29,5 @@ func chase() -> void:
 			animated_sprite.flip_h = true
 
 
-func _on_PathTimer_timeout():
-	pass # Replace with function body.
+func _on_PathTimer_timeout() -> void:
+	path = navigation.get_simple_path(global_position, player.position)

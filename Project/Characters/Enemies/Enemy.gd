@@ -25,5 +25,5 @@ func chase() -> void:
 		if vector_to_next_point.x > 0 and animated_sprite.flip_h:
 			animated_sprite.flip_h = false
 		# If the enemy is moving left and the animated sprite is not flipped, flip it
-		elif vector_to_next_point < 0 and not animated_sprite.flip_h:
+		elif vector_to_next_point.x < 0 and not animated_sprite.flip_h:
 			animated_sprite.flip_h = true

@@ -27,3 +27,7 @@ func chase() -> void:
 		# If the enemy is moving left and the animated sprite is not flipped, flip it
 		elif vector_to_next_point.x < 0 and not animated_sprite.flip_h:
 			animated_sprite.flip_h = true
+
+
+func _on_PathTimer_timeout():
+	pass # Replace with function body.

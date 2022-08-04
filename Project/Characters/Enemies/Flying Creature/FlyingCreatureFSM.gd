@@ -7,4 +7,8 @@ func _ready() -> void:
 	set_state(states.chase) # sets the starting state to the chase state
 
 func _state_logic(_delta: float) -> void:
-	pass
+	# If the state is the chase state, call the functions chase and move of the parent, making the
+	# creature chase the player
+	if state == states.chase:
+		parent.chase()
+		parent.move()

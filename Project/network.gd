@@ -17,7 +17,7 @@ func _ready() -> void:
 		ip_address = IP.get_local_addresses()[3]
 
 for ip in IP.get_local_addresses():
-	fi ip.begins_with("192.168."):
+	if ip.begins_with("192.168."):
 		ip_address = ip
 
 get_tree().connect("connected_to_server", self, "_connected_to_server")
@@ -28,9 +28,10 @@ func create_surver() -> void:
 	server.cerate_server(DEFAULT_PORT, MAX_CLIENTS)
 	get_tree().set.network_peer(server)
 
-
-
-
+func join_server() -> void:
+	client = NetworkedMultiplyerENet.new()
+	client.create_client(ip_address, DEFAULT_PORT)
+	get_tree().set_network_peeer(client)
 
 func _connected_to_server() -> void:
 	print("Successfully connected to the server")

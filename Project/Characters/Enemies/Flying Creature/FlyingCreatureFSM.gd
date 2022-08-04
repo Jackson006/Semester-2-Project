@@ -5,3 +5,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	set_state(states.chase) # sets the starting state to the chase state
+
+func _state_logic(_delta: float) -> void:
+	pass

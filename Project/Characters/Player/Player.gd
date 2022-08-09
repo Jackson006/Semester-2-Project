@@ -1,6 +1,7 @@
 extends Character
 
 onready var sword: Node2D = get_node("Sword") # gets the sword node
+onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 
 # warning-ignore:unused_argument
@@ -15,6 +16,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		animated_sprite.flip_h = true
 		
 	sword.rotation = mouse_direction.angle() # updates the rotation of the sword using the angle of the mouse's direction
+	sword_hitbox.knockback_direction = mouse_direction# sets the knockback direction to the mouse's direction
 		# Keeps the sword the right way up regardless of the mouse's direction
 	if sword.scale.y == 1 and mouse_direction.x < 0:
 		sword.scale.y = -1

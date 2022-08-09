@@ -6,6 +6,7 @@ const FRICTION: float= 0.15 # Controls the character's friction with the floor
 export(int) var acceleration: int = 40 # The character's acceleration value
 export(int) var max_speed: int = 100 # The character's maximum speed
 
+onready var state_machine: Node = get_node("FiniteState") # Changes the state when player takes damage
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite") # stores the AnimatedSprite node. This variable is used to flip the sprites
 
 var mov_direction: Vector2 = Vector2.ZERO # A variable that determines the direction the character moves in
@@ -22,3 +23,6 @@ func move() -> void: #
 	mov_direction = mov_direction.normalized() # normalises the movement direction
 	velocity += mov_direction * acceleration # adds acceleration in the direction of the movement to the velocity
 	velocity = velocity.clamped(max_speed) # Clamps the max speed
+
+func take_damage(dam: int, dir: Vector2, force: int) -> void: # Makes characters able to take damage
+	pass

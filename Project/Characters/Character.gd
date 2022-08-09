@@ -28,5 +28,5 @@ func move() -> void: #
 
 func take_damage(dam: int, dir: Vector2, force: int) -> void: # Makes characters able to take damage
 	hp -= dam # decreases the hp value with the dam parameter function
-	state_machine.set_state(state_machine.states.hurt) # sets the state of the character to hurt and adds the knockback in the corresponding direction and force to the velocity
+	state_machine.set_state(state_machine.states.hurt) # sets the state of the character to hurts and adds the knockback in the corresponding direction and force to the velocity
 	velocity += dir * force

@@ -10,7 +10,7 @@ func _ready() -> void:
 	set_state(states.idle)
 	
 func _state_logic(_delta: float) -> void:
-	if state == states.idle or state == states.move:# Checks if the state is idle or move
+	if state == states.idle or state == states.move: # Checks if the state is idle or move
 		parent.get_input()
 		parent.move()
 	
@@ -33,7 +33,7 @@ func _enter_state(_previous_state: int, new_state: int) -> void: # plays animati
 			animation_player.play("idle")
 		states.move:
 			animation_player.play("move")
-		states.idle:
+		states.hurt:
 			animation_player.play("hurt")
-		states.move:
+		states.dead:
 			animation_player.play("dead")

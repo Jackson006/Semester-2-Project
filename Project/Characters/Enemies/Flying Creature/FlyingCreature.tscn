@@ -8,22 +8,6 @@
 [ext_resource path="res://Hitbox.gd" type="Script" id=6]
 [ext_resource path="res://Characters/Enemies/Flying Creature/FlyingCreature.gd" type="Script" id=7]
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 5 )
-region = Rect2( 16, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 5 )
-region = Rect2( 48, 0, 16, 16 )
-
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )
@@ -40,16 +24,32 @@ region = Rect2( 32, 0, 16, 16 )
 atlas = ExtResource( 1 )
 region = Rect2( 48, 0, 16, 16 )
 
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 16, 16 )
+
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "dead",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "fly",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "dead",
 "speed": 5.0
 } ]
 
@@ -244,11 +244,11 @@ shape = SubResource( 6 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 6 )
+knockback_force = 350
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, 1 )
 shape = SubResource( 14 )
-disabled = true
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/RESET = SubResource( 7 )

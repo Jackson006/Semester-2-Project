@@ -308,7 +308,7 @@ script = ExtResource( 5 )
 [node name="AnimatedSprite" parent="." index="1"]
 visible = false
 frames = SubResource( 13 )
-animation = "dead"
+animation = "idle"
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 0, 3 )
@@ -336,6 +336,7 @@ rotation = 0.785398
 shape = SubResource( 18 )
 
 [node name="SlashSprite" type="Sprite" parent="Sword" index="1"]
+visible = false
 position = Vector2( 18, 0 )
 texture = ExtResource( 10 )
 hframes = 3

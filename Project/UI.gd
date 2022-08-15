@@ -20,3 +20,7 @@ func _update_health_bar(new_value: int) -> void:
 	# interpolates the value of the health bar to the new value indicated by the parameter using tween
 	var __ = health_bar_tween.interpolate_property(health_bar, "value", health_bar.value, new_value, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
 	__ = health_bar_tween.start() # Starts the tween
+
+
+func _on_Player_hp_hanged(new_hp):
+	pass # Replace with function body.

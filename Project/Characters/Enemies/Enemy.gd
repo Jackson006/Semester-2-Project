@@ -5,6 +5,7 @@ var path: PoolVector2Array # stores an array of points to the player
 
 onready var navigation: Navigation2D = get_tree().current_scene.get_node("Navigation2D")
 onready var player: KinematicBody2D = get_tree().current_scene.get_node("Player")
+onready var path_timer: Timer = get_node("PathTimer")
 
 func chase() -> void:
 	# if the path is not empty, create two variables: vector_to_next_point that stores the vector to the next

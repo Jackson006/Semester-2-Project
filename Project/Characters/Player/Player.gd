@@ -23,10 +23,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 	elif sword.scale.y == -1 and mouse_direction.x > 0:
 		sword.scale.y = 1
 	# checks if the attack input has been pressed and the sword animation is playing and if so plays the animation
-	if Input.is_action_just_pressed("ui_attack") and not sword_animation_player.is_playing():
-		sword_animation_player.play("attack")
-		
-		
+
 func get_input() -> void: # This function is called to get the player's input
 		mov_direction = Vector2.ZERO
 		if Input.is_action_pressed("ui_down"): # if the ui down action is triggered, increase the mov_direction with a vector of the same direction
@@ -37,3 +34,6 @@ func get_input() -> void: # This function is called to get the player's input
 			mov_direction += Vector2.RIGHT
 		if Input.is_action_pressed("ui_up"): # if the ui up action is triggered, increase the mov_direction with a vector of the same direction
 			mov_direction += Vector2.UP
+		
+		if Input.is_action_just_pressed("ui_attack") and not sword_animation_player.is_playing():
+			sword_animation_player.play("attack")

@@ -3,7 +3,9 @@ class_name Character, "res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/kn
 
 const FRICTION: float= 0.15 # Controls the character's friction with the floor
 
-export(int) var hp: int = 2 # stores the health values of characters
+# stores the health values of characters and defines the hp as a set variable
+export(int) var hp: int = 2 setget set_hp
+signal hp_hanged(new_hp)
 
 export(int) var acceleration: int = 40 # The character's acceleration value
 export(int) var max_speed: int = 100 # The character's maximum speed
@@ -27,10 +29,16 @@ func move() -> void: #
 	velocity = velocity.clamped(max_speed) # Clamps the max speed
 
 func take_damage(dam: int, dir: Vector2, force: int) -> void: # Makes characters able to take damage
-	hp -= dam # decreases the hp value with the dam parameter function
+	self.hp -= dam # decreases the hp value with the dam parameter function
 	if hp > 0: # if after taking damage, the hp is greater than 0, set the state to hurt and apply normal knockback
 		state_machine.set_state(state_machine.states.hurt) # sets the state of the character to hurts and adds the knockback in the corresponding direction and force to the velocity
 		velocity += dir * force
 	else: # if character is dead change the state to dead and apply double knockback
 		state_machine.set_state(state_machine.states.dead)
 		velocity += dir * force * 2
+
+# Function is called automatically every time the value of the hp variable is modified
+func set_hp(new_hp: int) -> void:
+	# updates the hp variable and emits the signal hp_changed with new_hp as paramenter
+	hp = new_hp
+	emit_signal("hp_changed", new_hp)

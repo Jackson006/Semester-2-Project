@@ -21,6 +21,10 @@ func _update_health_bar(new_value: int) -> void:
 	var __ = health_bar_tween.interpolate_property(health_bar, "value", health_bar.value, new_value, 0.5, Tween.TRANS_QUINT, Tween.EASE_OUT)
 	__ = health_bar_tween.start() # Starts the tween
 
-
-func _on_Player_hp_hanged(new_hp):
-	pass # Replace with function body.
+# Finds the new value of the health bar with the new hp of the player between 23-100
+func _on_Player_hp_hanged(new_hp: int) -> void:
+	# calculates the number of possible values of the new range: 100 - 23
+	# Multiplies the anterior value by the player hp %. Ues a value between 0-77 that represents hp%
+	var new_health: int = int((100 - Min_Health) * float(new_hp) / max_hp) + Min_Health
+	# Updates the health bar with the calulated value
+	_update_health_bar(new_health)

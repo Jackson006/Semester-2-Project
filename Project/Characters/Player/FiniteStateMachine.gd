@@ -22,6 +22,7 @@ func _get_transition() -> int:
 		states.move:
 			if parent.velocity.length() < 10:
 				return states.idle
+		states.hurt:
 			if not animation_player.is_playing(): # returns the idle state if the hurt animation is finished
 				return states.idle
 	return -1

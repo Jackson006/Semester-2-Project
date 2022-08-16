@@ -5,7 +5,7 @@ const FRICTION: float= 0.15 # Controls the character's friction with the floor
 
 # stores the health values of characters and defines the hp as a set variable
 export(int) var hp: int = 2 setget set_hp
-signal hp_hanged(new_hp)
+signal hp_changed(new_hp)
 
 export(int) var acceleration: int = 40 # The character's acceleration value
 export(int) var max_speed: int = 100 # The character's maximum speed

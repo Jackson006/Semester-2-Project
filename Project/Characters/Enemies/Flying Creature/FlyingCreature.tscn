@@ -249,6 +249,7 @@ knockback_force = 350
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2( 0, 1 )
 shape = SubResource( 14 )
+disabled = true
 
 [node name="AnimationPlayer" parent="." index="4"]
 anims/RESET = SubResource( 7 )

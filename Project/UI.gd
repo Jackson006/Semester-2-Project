@@ -28,3 +28,4 @@ func _on_Player_hp_changed(new_hp: int) -> void:
 	var new_health: int = int((100 - MIN_HEALTH) * float(new_hp) / max_hp) + MIN_HEALTH
 	# Updates the health bar with the calulated value
 	_update_health_bar(new_health)
+	print("Player health changed")

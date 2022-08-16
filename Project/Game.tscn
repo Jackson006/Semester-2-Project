@@ -87,3 +87,5 @@ hp = 4
 position = Vector2( 238, 71 )
 acceleration = 20
 max_speed = 50
+
+[connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]

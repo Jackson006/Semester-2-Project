@@ -27,7 +27,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Hitbox",
 "language": "GDScript",
-"path": "res://Hitbox.gd"
+"path": "res://Miscellaneous scripts/Hitbox.gd"
 } ]
 _global_script_class_icons={
 "Character": "res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png",
@@ -39,12 +39,12 @@ _global_script_class_icons={
 [application]
 
 config/name="The Binding of Trevor"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Rooms/Room0.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Network="*res://Network.gd"
+Network="*res://Networking/Network.gd"
 
 [display]
 

@@ -3,7 +3,7 @@ extends Node2D
 # Variable for the explosion animation
 const SPAWN_EXPLOSION_SCENE: PackedScene = preload("res://Characters/Enemies/SpawnExplosion.tscn")
 # Stores enemy scenes
-const ENEMY_SCENES: Dictionary = {"FLYING CREATURE": preload("res://Characters/Enemies/Flying Creature/FlyingCreature.tscn")}
+const ENEMY_SCENES: Dictionary = {"FLYING_CREATURE": preload("res://Characters/Enemies/Flying Creature/FlyingCreature.tscn")}
 
 var num_enemies: int
 
@@ -31,27 +31,28 @@ func _open_doors() -> void:
 func _close_entrance() -> void:
 	# Closes the entrance behind the player
 	for entry_position in entrance.get_children():
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.global_position), 1)
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.global_position) + Vector2.UP, 2)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 19)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 4)
 
 func _spawn_enemies() -> void:
 	# Spawns the enemies and the explosion effect. For each position spawn the enemy and spawn an explosion
 	for enemy_position in enemy_positions_container.get_children():
 		var enemy: KinematicBody2D = ENEMY_SCENES.FLYING_CREATURE.instance()
 		var __ = enemy.connect("tree_exited", self, "_on_enemy_killed")
-		enemy.global_position = enemy_position.global_position
+		enemy.position = enemy_position.position
 		call_deferred("add_child", enemy)
 		
 		var spawn_explosion: AnimatedSprite = SPAWN_EXPLOSION_SCENE.instance()
-		spawn_explosion.global_position = enemy_position.global_position
+		spawn_explosion.position = enemy_position.position
 		call_deferred("add_child", spawn_explosion)
 
 
-func _on_PlayerDetector_body_entered(body: KinematicBody2D) -> void:
+func _on_PlayerDetector_body_entered(_body: KinematicBody2D) -> void:
 	# When the player enters the room spawn enemies, close entrance, and queue free the detector
 	player_detector.queue_free()
 	_close_entrance()
 	_spawn_enemies()
+	print("area entered")
 
 
 

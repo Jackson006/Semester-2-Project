@@ -25,12 +25,13 @@ tint_progress = Color( 0.666667, 0.203922, 0.203922, 1 )
 
 [node name="Tween" type="Tween" parent="UI/HealthBar"]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 158, 198 )
-hp = 4
-
 [node name="Rooms" type="Node2D" parent="."]
 
 [node name="Room0" parent="Rooms" instance=ExtResource( 1 )]
+position = Vector2( 58, 24 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 219, 238 )
+hp = 4
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]

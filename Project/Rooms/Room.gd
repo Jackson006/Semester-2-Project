@@ -17,6 +17,12 @@ func _ready() -> void:
 	# Initialises the number of enemies with the number of children
 	num_enemies = enemy_positions_container.get_child_count()
 
+func _on_enemy_killed() -> void:
+	# Opens the doors when all the enemies are dead
+	num_enemies -= 1
+	if num_enemies == 0:
+		_open_doors()
+
 func _open_doors() -> void:
 	# calls the open function of all the doors using a loop
 	for door in door_container.get_children():
@@ -41,9 +47,11 @@ func _spawn_enemies() -> void:
 		call_deferred("add_child", spawn_explosion)
 
 
-
-
-
+func _on_PlayerDetector_body_entered(body: KinematicBody2D) -> void:
+	# When the player enters the room spawn enemies, close entrance, and queue free the detector
+	player_detector.queue_free()
+	_close_entrance()
+	_spawn_enemies()
 
 
 

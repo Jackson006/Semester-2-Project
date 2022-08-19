@@ -40,7 +40,7 @@ _global_script_class_icons={
 
 config/name="The Binding of Trevor"
 run/main_scene="res://Game.tscn"
-config/icon="res://icon.png"
+config/icon="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_anim_f0.png"
 
 [autoload]
 

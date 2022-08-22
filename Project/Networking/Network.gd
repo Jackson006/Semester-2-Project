@@ -6,7 +6,7 @@ const MAX_CLIENTS = 3
 var server = null
 var client = null
 
-var ip_address = ''
+var ip_address = " "
 
 func _ready() -> void:
 	if OS.get_name() == "Linux":

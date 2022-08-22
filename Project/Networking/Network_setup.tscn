@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Networking/Network_setup.gd" type="Script" id=1]
 
-
 [node name="Network_setup" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -34,7 +33,7 @@ margin_right = 51.5
 margin_bottom = 25.0
 text = "Join_server"
 
-[node name="surver_ip_address" type="LineEdit" parent="Multiplayer_configure"]
+[node name="Surver_ip_address" type="LineEdit" parent="Multiplayer_configure"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -29.0

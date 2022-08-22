@@ -1,16 +1,16 @@
 extends Control
 
 onready var multiplayer_config_ui = $Multiplayer_configure
-onready var server_ip_address = $Multiplayer_configure/Surver_ip_address
+onready var server_ip_address = $Multiplayer_configure/Server_ip_address
 
-onready var device_ip_address = $CanvasLayer/Device_ip_address
+onready var device_ip_address = $CanvasLayer/device_ip_address
 
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, '_player_disconnected')
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	
-	#device_ip_address.text = Network.ip_address
+	device_ip_address.text = Network.ip_address
 
 func _player_connected(id) -> void:
 	print("player " + str(id) + "has connected")
@@ -20,10 +20,10 @@ func _player_disconnected(id) -> void:
 
 func _on_Create_server_pressed():
 	multiplayer_config_ui.hide()
-	Network.create_server()
+	Network._create_server()
 
 func _on_Join_server_pressed():
-	if server_ip_address.text != "":
+	#if server_ip_address.text != "":
 		multiplayer_config_ui.hide()
-		Network.ipaddress = server_ip_address.text
-		Network.join_server
+		Network.ip_address = server_ip_address.text
+		Network._join_server()

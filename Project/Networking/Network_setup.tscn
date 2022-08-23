@@ -33,7 +33,7 @@ margin_right = 51.5
 margin_bottom = 25.0
 text = "Join_server"
 
-[node name="Surver_ip_address" type="LineEdit" parent="Multiplayer_configure"]
+[node name="Server_ip_address" type="LineEdit" parent="Multiplayer_configure"]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -29.0
@@ -43,7 +43,7 @@ align = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="device_ip_address" type="Label" parent="CanvasLayer"]
+[node name="Device_ip_address" type="Label" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

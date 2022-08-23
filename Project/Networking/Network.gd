@@ -6,11 +6,11 @@ const MAX_CLIENTS = 3
 var server = null
 var client = null
 
-var ip_address = " "
+var ip_address = ""
 
 func _ready() -> void:
 	if OS.get_name() == "Linux":
-		ip_address = IP.getlocal_addresses()[3]
+		ip_address = IP.get_local_addresses()[3]
 
 	for ip in IP.get_local_addresses():
 		if ip.begins_with("192.168."):
@@ -19,7 +19,7 @@ func _ready() -> void:
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	get_tree().connect("server_disconnected", self, "_server_disconnected")
 
-func _create_server() -> void:
+func create_server() -> void:
 	server = NetworkedMultiplayerENet.new()
 	server.create_server(DEFAULT_PORT, MAX_CLIENTS)
 	get_tree().set_network_peer(server)
@@ -27,7 +27,7 @@ func _create_server() -> void:
 func _join_server() -> void:
 	client = NetworkedMultiplayerENet.new()
 	client.create_client(ip_address, DEFAULT_PORT)
-	get_tree().set_network_peeer(client)
+	get_tree().set_network_peer(client)
 
 func _connected_to_server() -> void:
 	print("Successfully connected to the server")

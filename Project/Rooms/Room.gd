@@ -7,7 +7,7 @@ const ENEMY_SCENES: Dictionary = {"FLYING_CREATURE": preload("res://Characters/E
 
 var num_enemies: int
 
-onready var tilemap: TileMap = get_node("Navigation2D/TileMap2")
+onready var tilemap: TileMap = get_node("TileMap2")
 onready var entrance: Node2D = get_node("Entrance")
 onready var door_container: Node2D = get_node("Doors")
 onready var enemy_positions_container: Node2D = get_node("EnemyPositions")
@@ -31,8 +31,8 @@ func _open_doors() -> void:
 func _close_entrance() -> void:
 	# Closes the entrance behind the player
 	for entry_position in entrance.get_children():
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 19)
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 4)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 2)
+		tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 15)
 
 func _spawn_enemies() -> void:
 	# Spawns the enemies and the explosion effect. For each position spawn the enemy and spawn an explosion

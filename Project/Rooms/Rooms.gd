@@ -29,9 +29,9 @@ func _spawn_rooms() -> void:
 			player.position = room.get_node("PlayerSpawnPos").position
 		else:
 			if i == num_levels -1:
-				room = END_ROOMS[randi() % END_ROOMS.size()]
+				room = END_ROOMS[randi() % END_ROOMS.size()].instance()
 			else:
-				room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()] 
+				room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()].instance()
 				
 			var previous_room_tilemap: TileMap = previous_room.get_node("TileMap")
 			var previous_room_door: StaticBody2D = previous_room.get_node("Doors/Door")

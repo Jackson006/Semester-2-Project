@@ -353,3 +353,7 @@ anims/Move = ExtResource( 3 )
 anims/RESET = SubResource( 15 )
 anims/dead = SubResource( 24 )
 anims/hurt = SubResource( 19 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="5"]
+current = true
+zoom = Vector2( 10, 10 )

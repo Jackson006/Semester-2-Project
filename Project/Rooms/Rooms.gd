@@ -27,6 +27,10 @@ func _spawn_rooms() -> void:
 		if i == 0:
 			room = SPAWN_ROOMS[randi() % SPAWN_ROOMS.size()].instance()
 			player.position = room.get_node("PlayerSpawnPos").position
-	
+		else:
+			if i == num_levels -1:
+				room = END_ROOMS[randi() % END_ROOMS.size()]
+			else:
+				room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()]
 		add_child(room)
 		previous_room = room

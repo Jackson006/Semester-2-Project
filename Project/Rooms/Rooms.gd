@@ -32,5 +32,17 @@ func _spawn_rooms() -> void:
 				room = END_ROOMS[randi() % END_ROOMS.size()]
 			else:
 				room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()]
+				
+			var previous_room_tilemap: TileMap = previous_room.get_node("TileMap")
+			var previous_room_door: StaticBody2D = previous_room.get_node("Doors/Door")
+			var exit_tile_pos: Vector2 = previous_room_tilemap.world_to_map(previous_room_door.position) + Vector2.UP * 2
+				
+			var corridor_height: int = randi() % 5+ 2
+			for y in corridor_height:
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-2, -y), LEFT_WALL_TILE_INDEX)
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-1, -y), FLOOR_TILE_INDEX)
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-0, -y), FLOOR_TILE_INDEX)
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-2, -y), RIGHT_WALL_TILE_INDEX)
+				
 		add_child(room)
 		previous_room = room

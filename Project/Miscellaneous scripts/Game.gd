@@ -2,6 +2,8 @@ extends Node2D
 
 
 func _init() -> void: # gets and stores the size of the screen and the size of the window
+	randomize()
+	
 	var screen_size: Vector2 = OS.get_screen_size()
 	var window_size: Vector2 = OS.get_window_size()
 	# changes the position of the window to half the size of the screen minus half the size of the window

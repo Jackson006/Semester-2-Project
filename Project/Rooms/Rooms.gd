@@ -9,7 +9,7 @@ const FLOOR_TILE_INDEX: int = 22
 const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
-export(int) var num_levels: = 5
+export(int) var num_levels: int = 5
 
 onready var player: KinematicBody2D = get_parent().get_node("Player")
 
@@ -41,10 +41,10 @@ func _spawn_rooms() -> void:
 			for y in corridor_height:
 				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-2, -y), LEFT_WALL_TILE_INDEX)
 				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-1, -y), FLOOR_TILE_INDEX)
-				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-0, -y), FLOOR_TILE_INDEX)
-				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-2, -y), RIGHT_WALL_TILE_INDEX)
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(0, -y), FLOOR_TILE_INDEX)
+				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(1, -y), RIGHT_WALL_TILE_INDEX)
 				
-			var room_tilemap: TileMap = room.et_node("TileMap")
+			var room_tilemap: TileMap = room.get_node("TileMap")
 			room.position = previous_room_door.global_position + Vector2.UP * room_tilemap.get_used_rect().size.y * TILE_SIZE + Vector2.UP * (1 + corridor_height) * TILE_SIZE + Vector2.LEFT * room_tilemap.world_to_map(room.get_node("Entrance/Position2D2").position).x * TILE_SIZE
 				
 		add_child(room)

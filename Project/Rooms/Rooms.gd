@@ -9,7 +9,7 @@ const FLOOR_TILE_INDEX: int = 22
 const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
-export(int) var num_levels: int = 8
+export(int) var num_levels: int = 8 
 
 onready var player: KinematicBody2D = get_parent().get_node("Player")
 

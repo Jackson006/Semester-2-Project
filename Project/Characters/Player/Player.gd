@@ -1,6 +1,8 @@
 extends Character
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
+puppet var puppet_velocity = Vector2()
+puppet var puppet_rotation = 0
 onready var sword: Node2D = get_node("Sword") # gets the sword node
 onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
@@ -31,7 +33,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		
 		
 		
-func get_input() -> void: # This function is called to get the player's input
+func get_input() -> void: # This function is called to get the player's inputmn 
 		mov_direction = Vector2.ZERO
 		if Input.is_action_pressed("ui_down"): # if the ui down action is triggered, increase the mov_direction with a vector of the same direction
 			mov_direction +=Vector2.DOWN

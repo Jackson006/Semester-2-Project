@@ -302,6 +302,9 @@ tracks/2/keys = {
 collision_layer = 2
 collision_mask = 5
 script = ExtResource( 4 )
+hp = null
+acceleration = null
+max_speed = null
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource( 5 )
@@ -356,3 +359,9 @@ anims/hurt = SubResource( 19 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 current = true
+
+[node name="Network_tick_rate" type="Timer" parent="." index="6"]
+wait_time = 0.03
+autostart = true
+
+[connection signal="timeout" from="Network_tick_rate" to="." method="_on_Network_tick_rate_timeout"]

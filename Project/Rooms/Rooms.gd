@@ -9,7 +9,7 @@ const FLOOR_TILE_INDEX: int = 22
 const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
-export(int) var num_levels: int = 5
+export(int) var num_levels: int = 8
 
 onready var player: KinematicBody2D = get_parent().get_node("Player")
 
@@ -37,7 +37,7 @@ func _spawn_rooms() -> void:
 			var previous_room_door: StaticBody2D = previous_room.get_node("Doors/Door")
 			var exit_tile_pos: Vector2 = previous_room_tilemap.world_to_map(previous_room_door.position) + Vector2.UP * 2
 				
-			var corridor_height: int = randi() % 5+ 2
+			var corridor_height: int = randi() % 5 + 2
 			for y in corridor_height:
 				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-2, -y), LEFT_WALL_TILE_INDEX)
 				previous_room_tilemap.set_cellv(exit_tile_pos + Vector2(-1, -y), FLOOR_TILE_INDEX)

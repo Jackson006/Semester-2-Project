@@ -1,11 +1,14 @@
 extends Character
 
+const speed = 300
+
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotation = 0
 onready var sword: Node2D = get_node("Sword") # gets the sword node
 onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
+onready var tween = $Tween
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void: #stores the direction of the mouse relative to the player
@@ -28,9 +31,17 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 	if is_network_master():
 		var x_input = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")) 
 		var y_input = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("up"))
-	else:
-		rotation_degrees = lerp(rotaion_degrees, puppet_rotation, delta * 8)
 		
+		velocity = Vector2(x_input, y_input).normalized()
+		
+		move_and_slide(velocity * speed)
+		
+		look_at(get_global_mouse_position())
+	else:
+		#rotation_degrees = lerp(rotaion_degrees, puppet_rotation, delta * 8)  #not working idk why find out later 
+		
+		if not tween.is_active():
+			move_and_slide(puppet_velocity * speed)
 		
 		
 func get_input() -> void: # This function is called to get the player's inputmn 
@@ -52,4 +63,6 @@ func puppet_position_set(new_value) -> void:
 
 func _on_Network_tick_rate_timeout():
 	if is_network_master():
-		rset_unreliable("puppet+position", global_position) #sends out heaps of pacets but does not check if the client has resaved it
+		rset_unreliable("puppet_position", global_position) #sends out heaps of pacets but does not check if the client has resaved it
+		rset_unreliable("puppet_velocity", velocity)
+		rset_unreliable("puppet_rotation", rotation)

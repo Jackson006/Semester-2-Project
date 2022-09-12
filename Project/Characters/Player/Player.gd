@@ -37,11 +37,11 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		move_and_slide(velocity * speed)
 		
 		look_at(get_global_mouse_position())
-	else:
+	# else:
 		#rotation_degrees = lerp(rotaion_degrees, puppet_rotation, delta * 8)  #not working idk why find out later 
 		
-		if not tween.is_active():
-			move_and_slide(puppet_velocity * speed)
+		# if not tween.is_active():
+			# move_and_slide(puppet_velocity * speed)
 		
 		
 func get_input() -> void: # This function is called to get the player's inputmn 

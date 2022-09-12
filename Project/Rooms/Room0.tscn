@@ -4,7 +4,7 @@
 [ext_resource path="res://Rooms/Door.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12, 9 )
+extents = Vector2( 16, 9 )
 
 [node name="Room0" instance=ExtResource( 1 )]
 position = Vector2( 32, 32 )

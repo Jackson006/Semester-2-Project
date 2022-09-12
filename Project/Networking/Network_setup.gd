@@ -42,6 +42,6 @@ func _connected_to_server() -> void:
 	instance_player(get_tree().get_network_unique_id())
 
 func instance_player(id) -> void:
-	var player_instance = Globle.instance_node_at_location(player, Players, Vector2(160, 176))
+	var player_instance = Global.instance_node_at_location(player, Players, Vector2(160, 176))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)

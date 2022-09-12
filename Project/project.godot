@@ -45,7 +45,7 @@ config/icon="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knigh
 [autoload]
 
 Network="*res://Networking/Network.gd"
-Globle="*res://Miscellaneous scripts/Globle.gd"
+Globle="*res://Miscellaneous scripts/Global.gd"
 Players="*res://Networking/Players.tscn"
 
 [display]

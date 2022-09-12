@@ -1,6 +1,6 @@
 extends Control
 
-var player = load("res://Player.tscn")
+var player = load("Characters/Player/Player.tscn")
 
 onready var multiplayer_config_ui = $Multiplayer_configure
 onready var server_ip_address = $Multiplayer_configure/Server_ip_address
@@ -10,7 +10,6 @@ onready var device_ip_address = $CanvasLayer/Device_ip_address
 func _ready() -> void:
 	get_tree().connect("network_peer_connected", self, "_player_connected")
 	get_tree().connect("network_peer_disconnected", self, "_player_disconnected")
-	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	get_tree().connect("connected_to_server", self, "_connected_to_server")
 	
 	device_ip_address.text = Network.ip_address

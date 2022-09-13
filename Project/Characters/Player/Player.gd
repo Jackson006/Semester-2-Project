@@ -8,7 +8,7 @@ puppet var puppet_rotation = 0
 onready var sword: Node2D = get_node("Sword") # gets the sword node
 onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
-onready var tween = $Tween
+#onready var tween = $Tween   
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void: #stores the direction of the mouse relative to the player

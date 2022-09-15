@@ -1,6 +1,6 @@
 extends Node2D
 
-const DEFAULT_PORT = 28960
+const DEFAULT_PORT = 28961
 const MAX_CLIENTS = 3
 
 var server = null

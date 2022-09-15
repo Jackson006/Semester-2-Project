@@ -29,8 +29,8 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		sword.scale.y = 1
 	# checks if the attack input has been pressed and the sword animation is playing and if so plays the animation
 	if is_network_master():
-		var x_input = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left")) 
-		var y_input = int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("up"))
+		var x_input = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")) 
+		var y_input = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 		
 		velocity = Vector2(x_input, y_input).normalized()
 		

@@ -15,7 +15,7 @@ func chase() -> void:
 		var distance_to_next_point: float = vector_to_next_point.length()
 		# if the distance to the next point is less than 1, remove the first point of the path
 		# and if there aren't more points in the path, return.
-		if distance_to_next_point < 1:
+		if distance_to_next_point < 3:
 			path.remove(0)
 			if not path:
 				return

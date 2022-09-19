@@ -283,6 +283,8 @@ tracks/1/keys = {
 
 [node name="Goblin" instance=ExtResource( 1 )]
 script = ExtResource( 5 )
+acceleration = 30
+max_speed = 75
 
 [node name="FiniteStateMachine" parent="." index="0"]
 script = ExtResource( 6 )
@@ -301,3 +303,6 @@ anims/dead = SubResource( 20 )
 anims/hurt = SubResource( 21 )
 anims/idle = SubResource( 22 )
 anims/move = SubResource( 23 )
+
+[node name="PathTimer" parent="." index="4"]
+wait_time = 0.2

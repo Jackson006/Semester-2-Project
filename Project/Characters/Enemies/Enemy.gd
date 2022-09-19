@@ -32,8 +32,13 @@ func chase() -> void:
 
 func _on_PathTimer_timeout() -> void:
 	if is_instance_valid(player): # checks if the player is a valid instance before making the path so that the game doesn't crash when the player dies
-		path = navigation.get_simple_path(global_position, player.position)
+		_get_path_to_player()
 	else: # if the player is no longer a valid instance, stop the timer
 		path_timer.stop()
 		path = []
 		mov_direction = Vector2.ZERO
+
+func _get_path_to_player() -> void:
+	path = navigation.get_simple_path(global_position, player.position)
+
+

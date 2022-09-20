@@ -24,7 +24,7 @@ func _on_PathTimer_timeout() -> void:
 		elif distance_to_player < MIN_DISTANCE_TO_PLAYER:
 			_get_path_to_move_away_from_player()
 		else:
-			if can_attack:
+			if can_attack and state_machine.state == state_machine.states.idle:
 				can_attack = false
 				_throw_knife()
 				attack_timer.start()

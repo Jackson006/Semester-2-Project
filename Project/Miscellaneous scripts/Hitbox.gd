@@ -14,4 +14,11 @@ func _ready() -> void:
 	assert(collision_shape != null) # Makes sure the hitbox has a collision shape
 
 func _on_body_entered(body: PhysicsBody2D) -> void:
-	body.take_damage(damage, knockback_direction, knockback_force) # When a body enters the collision area, call the function take_damage of the body with the variables of the script as parameters
+	_collide(body)
+
+func _collide(body: KinematicBody2D) -> void:
+	# Checks if the body parameter is null 
+	if body == null or not body.has_method("take_damage"):
+		queue_free()
+	else:
+		body.take_damage(damage, knockback_direction, knockback_force)

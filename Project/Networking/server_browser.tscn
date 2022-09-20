@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "Serching for servers" ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Serching"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Serching for servers", "Serching for servers.", "Serching for servers..", "Serching for servers..." ]
+}
+
+[node name="server_browser" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="background_panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 26.0
+margin_top = 26.0
+margin_right = -14.0
+margin_bottom = -24.0
+
+[node name="Manual_setup" type="Button" parent="background_panel"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -103.0
+margin_top = -26.0
+margin_right = -5.0
+margin_bottom = -6.0
+text = "Manual Setup"
+
+[node name="Go_Back" type="Button" parent="background_panel"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 3.0
+margin_top = -27.0
+margin_right = 101.0
+margin_bottom = -7.0
+text = "Go Back"
+
+[node name="Join_Server" type="Button" parent="background_panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -49.0
+margin_top = -10.0
+margin_right = 49.0
+margin_bottom = 10.0
+text = "Join Server"
+
+[node name="Server_ip_text_edit" type="LineEdit" parent="background_panel"]
+margin_left = 100.0
+margin_top = 70.0
+margin_right = 350.0
+margin_bottom = 94.0
+align = 1
+
+[node name="tipe_in_server_ip" type="Label" parent="background_panel/Server_ip_text_edit"]
+margin_left = 62.0
+margin_top = -16.0
+margin_right = 165.0
+margin_bottom = -2.0
+text = "Tipe in server ip"
+align = 1
+valign = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background_panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 70.0
+margin_top = 30.0
+margin_right = -70.0
+margin_bottom = -90.0
+
+[node name="Serching_for_servers" type="Label" parent="background_panel/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 14.0
+text = "Serching for servers"
+align = 1
+valign = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="background_panel/VBoxContainer/Serching_for_servers"]
+autoplay = "Serching"
+anims/RESET = SubResource( 1 )
+anims/Serching = SubResource( 2 )

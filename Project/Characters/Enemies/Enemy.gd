@@ -15,7 +15,7 @@ func chase() -> void:
 		var distance_to_next_point: float = vector_to_next_point.length()
 		# if the distance to the next point is less than 1, remove the first point of the path
 		# and if there aren't more points in the path, return.
-		if distance_to_next_point < 1:
+		if distance_to_next_point < 3:
 			path.remove(0)
 			if not path:
 				return
@@ -32,8 +32,13 @@ func chase() -> void:
 
 func _on_PathTimer_timeout() -> void:
 	if is_instance_valid(player): # checks if the player is a valid instance before making the path so that the game doesn't crash when the player dies
-		path = navigation.get_simple_path(global_position, player.position)
+		_get_path_to_player()
 	else: # if the player is no longer a valid instance, stop the timer
 		path_timer.stop()
 		path = []
 		mov_direction = Vector2.ZERO
+
+func _get_path_to_player() -> void:
+	path = navigation.get_simple_path(global_position, player.position)
+
+

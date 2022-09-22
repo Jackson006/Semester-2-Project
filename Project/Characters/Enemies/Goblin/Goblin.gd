@@ -33,7 +33,7 @@ func _on_PathTimer_timeout() -> void:
 	# If the player is not a valid instance, stop the timer, empty the path 
 	# array, and change the movement direction to an empty vector
 	else:
-		path_timer.stop
+		path_timer.stop()
 		path = []
 		mov_direction = Vector2.ZERO
 

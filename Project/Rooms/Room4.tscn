@@ -24,9 +24,11 @@ position = Vector2( 264, 216 )
 position = Vector2( 256, 48 )
 
 [node name="Position2D" type="Position2D" parent="EnemyPositions" index="0"]
+visible = false
 position = Vector2( 176, 80 )
 
 [node name="Position2D2" type="Position2D" parent="EnemyPositions" index="1"]
+visible = false
 position = Vector2( 336, 80 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]

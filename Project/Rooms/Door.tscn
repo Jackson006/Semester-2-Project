@@ -132,4 +132,4 @@ shape = SubResource( 18 )
 
 [node name="StoneDoor" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -10.0
+volume_db = -8.0

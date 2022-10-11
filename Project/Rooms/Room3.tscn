@@ -28,10 +28,10 @@ position = Vector2( 152, 184 )
 position = Vector2( 144, 16 )
 
 [node name="Position2D" type="Position2D" parent="EnemyPositions" index="0"]
-position = Vector2( -80, 32 )
+position = Vector2( 88, 88 )
 
 [node name="Position2D2" type="Position2D" parent="EnemyPositions" index="1"]
-position = Vector2( -80, 32 )
+position = Vector2( 200, 88 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" index="0"]
 position = Vector2( 144, 168 )

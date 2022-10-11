@@ -71,3 +71,6 @@ func _on_Network_tick_rate_timeout():
 # func _process_dead() -> void:
 	# if state == states.idle:
 		# get_tree().change_scene("res://Main_Menu.tscn")
+
+func _game_over() -> void:
+	get_tree().change_scene("res://Main_Menu.tscn")

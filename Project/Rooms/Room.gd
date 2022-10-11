@@ -30,9 +30,10 @@ func _open_doors() -> void:
 
 func _close_entrance() -> void:
 	# Closes the entrance behind the player
-	for entry_position in entrance.get_children():
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 2)
-		tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 15)
+	# for entry_position in entrance.get_children():
+		# tilemap.set_cellv(tilemap.world_to_map(entry_position.position), 2)
+		# tilemap.set_cellv(tilemap.world_to_map(entry_position.position) + Vector2.DOWN, 15)
+		pass
 
 func _spawn_enemies() -> void:
 	# Spawns the enemies and the explosion effect. For each position spawn the enemy and spawn an explosion

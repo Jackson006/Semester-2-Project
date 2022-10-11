@@ -5,7 +5,7 @@ extends Navigation2D
 # The Spawn rooms constant are the rooms that are placed at the start of the level
 const SPAWN_ROOMS: Array = [preload("res://Rooms/SpawnRoom0.tscn"), preload("res://Rooms/SpawnRoom1.tscn")]
 # The intermidiate rooms are the rooms that are placed in the middle of the level
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"), preload("res://Rooms/Room0.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"), preload("res://Rooms/Room2.tscn"), preload("res://Rooms/Room3.tscn")]
 # The end rooms constant is the room that is placed at the end of the level
 const END_ROOMS: Array = [preload("res://Rooms/EndRoom0.tscn")]
 
@@ -16,7 +16,7 @@ const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
 # This variable is the number of rooms that are generated at the beginning of the game
-export(int) var num_levels: int = 6 
+export(int) var num_levels: int = 8 
 
 # This variable stores the player scene for the procedural generation
 onready var player: KinematicBody2D = get_parent().get_node("Player")

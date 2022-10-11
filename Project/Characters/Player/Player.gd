@@ -67,3 +67,7 @@ func _on_Network_tick_rate_timeout():
 		rset_unreliable("puppet_position", global_position) #sends out heaps of pacets but does not check if the client has resaved it
 		rset_unreliable("puppet_velocity", velocity)
 		rset_unreliable("puppet_rotation", rotation)
+
+# func _process_dead() -> void:
+	# if state == states.idle:
+		# get_tree().change_scene("res://Main_Menu.tscn")

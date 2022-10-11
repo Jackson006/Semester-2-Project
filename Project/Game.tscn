@@ -35,7 +35,7 @@ hp = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
-volume_db = -16.0
+volume_db = -18.0
 autoplay = true
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]

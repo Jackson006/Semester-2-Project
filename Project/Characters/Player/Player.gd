@@ -56,6 +56,7 @@ func get_input() -> void: # This function is called to get the player's inputmn
 			mov_direction += Vector2.UP
 		
 		if Input.is_action_just_pressed("ui_attack") and not sword_animation_player.is_playing():
+			$Sword/SwordSwing.play()
 			sword_animation_player.play("attack")
 
 func puppet_position_set(new_value) -> void:

@@ -31,6 +31,7 @@ func move() -> void: #
 func take_damage(dam: int, dir: Vector2, force: int) -> void: # Makes characters able to take damage
 	if state_machine.state != state_machine.states.hurt and state_machine.state != state_machine.states.dead:
 		self.hp -= dam # decreases the hp value with the dam parameter function
+		$EnemyHit.play()
 		if hp > 0: # if after taking damage, the hp is greater than 0, set the state to hurt and apply normal knockback
 			state_machine.set_state(state_machine.states.hurt) # sets the state of the character to hurts and adds the knockback in the corresponding direction and force to the velocity
 			velocity += dir * force

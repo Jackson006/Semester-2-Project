@@ -11,5 +11,6 @@ func instance_node(node: Object, parent: Object) -> Object:
 	return node_instance
 
 var audio_clips = {
-	"Mouse_Click": preload("res://Audio/Mouse Click.wav")
+	"Mouse_Click": preload("res://Audio/Mouse Click.wav"),
+	"Enemy_Death": preload("res://Audio/Enemy Death.wav")
 }

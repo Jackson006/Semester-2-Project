@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Animations/open.tres" type="Animation" id=1]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/tiles/wall/door_fullyopen.png" type="Texture" id=2]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/tiles/wall/door_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Rooms/Door.gd" type="Script" id=4]
+[ext_resource path="res://Audio/Stone Door.wav" type="AudioStream" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -128,3 +129,7 @@ anims/open = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 18 )
+
+[node name="StoneDoor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0

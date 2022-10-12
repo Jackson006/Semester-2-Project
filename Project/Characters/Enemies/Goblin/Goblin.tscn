@@ -282,6 +282,7 @@ tracks/1/keys = {
 }
 
 [node name="Goblin" instance=ExtResource( 1 )]
+collision_layer = 5
 script = ExtResource( 5 )
 acceleration = 30
 max_speed = 75

@@ -1,6 +1,22 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Autoloads/SceneTransistor.gd" type="Script" id=1]
+[sub_resource type="GDScript" id=3]
+script/source = "extends CanvasLayer
+
+var new_scene: String
+
+# Stores the node for the animation player
+onready var animation_player: AnimationPlayer = get_node(\"AnimationPlayer\")
+
+# Function is called when the scene transistions
+func start_transistion_to(path_to_scene: String) -> void:
+	new_scene = path_to_scene
+	animation_player.play(\"change_scene\")
+
+# Changes the scene using the new scene path
+func change_scene() -> void:
+	assert(get_tree().change_scene(new_scene) == OK)
+"
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -49,7 +65,7 @@ tracks/1/keys = {
 
 [node name="SceneTransistor" type="CanvasLayer"]
 layer = 2
-script = ExtResource( 1 )
+script = SubResource( 3 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0

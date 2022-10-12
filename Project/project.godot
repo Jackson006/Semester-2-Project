@@ -48,6 +48,7 @@ Network="*res://Networking/Network.gd"
 Global="*res://Miscellaneous scripts/Global.gd"
 Players="*res://Networking/Players.tscn"
 SavedData="*res://Autoloads/SavedData.gd"
+SceneTransistor="*res://Autoloads/SceneTransistor.tscn"
 
 [display]
 

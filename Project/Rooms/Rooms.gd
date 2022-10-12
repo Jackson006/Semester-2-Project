@@ -16,7 +16,7 @@ const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
 # This variable is the number of rooms that are generated at the beginning of the game
-export(int) var num_levels: int = 8 
+export(int) var num_levels: int = 2 
 
 # This variable stores the player scene for the procedural generation
 onready var player: KinematicBody2D = get_parent().get_node("Player")

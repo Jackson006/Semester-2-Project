@@ -4,6 +4,7 @@ const speed = 300
 const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
 
 onready var dust_position: Position2D = get_node("DustPosition")
+onready var parent: Node2D = get_parent()
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
@@ -80,7 +81,7 @@ func _spawn_dust() -> void:
 	var dust: Sprite = DUST_SCENE.instance()
 	# changes the position of the dust to the global position of the player
 	dust.position = dust_position.global_position
-	get_parent().add_child(dust)
+	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 
 func _game_over() -> void:
 	get_tree().change_scene("res://Main_Menu.tscn")

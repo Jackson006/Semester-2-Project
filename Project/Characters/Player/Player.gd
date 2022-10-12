@@ -1,6 +1,9 @@
 extends Character
 
 const speed = 300
+const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
+
+onready var dust_position: Position2D = get_node("DustPosition")
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
@@ -72,5 +75,14 @@ func _on_Network_tick_rate_timeout():
 	# if state == states.idle:
 		# get_tree().change_scene("res://Main_Menu.tscn")
 
+func _spawn_dust() -> void:
+	# stores new instance of the dust sprite
+	var dust: Sprite = DUST_SCENE.instance()
+	# changes the position of the dust to the global position of the player
+	dust.position = dust_position.global_position
+	get_parent().add_child(dust)
+
 func _game_over() -> void:
 	get_tree().change_scene("res://Main_Menu.tscn")
+
+

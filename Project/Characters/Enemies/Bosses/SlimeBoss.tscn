@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Characters/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Miscellaneous scripts/Hitbox.gd" type="Script" id=2]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/slime/slime_run_spritesheeet.png" type="Texture" id=4]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/slime/slime_idle_spritesheet.png" type="Texture" id=5]
+[ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slime shadow.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -243,26 +244,30 @@ height = 8.0
 collision_layer = 0
 collision_mask = 2
 
-[node name="AnimatedSprite" parent="." index="1"]
+[node name="Shadow" type="Sprite" parent="." index="1"]
+modulate = Color( 1, 1, 1, 0.705882 )
+texture = ExtResource( 6 )
+
+[node name="AnimatedSprite" parent="." index="2"]
 frames = SubResource( 17 )
 animation = "idle"
 
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="3"]
 position = Vector2( 0, 3 )
 rotation = 1.5708
 shape = SubResource( 18 )
 
-[node name="AnimationPlayer" parent="." index="3"]
+[node name="AnimationPlayer" parent="." index="4"]
 anims/RESET = SubResource( 19 )
 anims/idle = SubResource( 20 )
 anims/jump = SubResource( 21 )
 
-[node name="JumpTimer" type="Timer" parent="." index="6"]
+[node name="JumpTimer" type="Timer" parent="." index="7"]
 wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="Hitbox" type="Area2D" parent="." index="7"]
+[node name="Hitbox" type="Area2D" parent="." index="8"]
 script = ExtResource( 2 )
 damage = 2
 knockback_force = 400

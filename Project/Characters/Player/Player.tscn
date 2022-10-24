@@ -273,7 +273,7 @@ anims/hurt = SubResource( 19 )
 current = true
 
 [node name="Network_tick_rate" type="Timer" parent="." index="6"]
-wait_time = 0.03
+wait_time = 0.05
 autostart = true
 
 [node name="Walk" type="AudioStreamPlayer" parent="." index="8"]

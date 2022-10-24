@@ -7,9 +7,10 @@ var server = null
 var client = null
 
 var ip_address = ""
+var current_player_username = ""
 
 func _ready() -> void:
-	if OS.get_name() == "Linux":
+	if OS.get_name() == "Windows":
 		ip_address = IP.get_local_addresses()[3]
 
 	for ip in IP.get_local_addresses():

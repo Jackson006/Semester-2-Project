@@ -33,19 +33,32 @@ margin_right = 51.5
 margin_bottom = 25.0
 text = "Join_server"
 
-[node name="Server_ip_address" type="LineEdit" parent="Multiplayer_configure"]
+[node name="username_text_edit" type="LineEdit" parent="Multiplayer_configure"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -29.0
-margin_right = 29.0
+margin_left = -70.0
+margin_right = 66.0
 margin_bottom = 24.0
 align = 1
+
+[node name="Label" type="Label" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -56.6299
+margin_top = 25.1984
+margin_right = 44.3701
+margin_bottom = 39.1984
+text = "Enter username"
+align = 1
+valign = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Start_game" type="Button" parent="CanvasLayer"]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = -0.840897
+margin_top = 0.840897
+margin_right = 79.1591
+margin_bottom = 20.8409
 text = "Start game"
 
 [node name="Device_ip_address" type="Label" parent="CanvasLayer"]

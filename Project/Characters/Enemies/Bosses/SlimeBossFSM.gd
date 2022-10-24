@@ -56,5 +56,19 @@ func _exit_state(state_exited: int) -> void:
 		path_timer.start()
 		jump_timer.start()
 
-func _on_JumpTimer_timeout():
-	pass # Replace with function body.
+func _on_JumpTimer_timeout(): # Enables the slime to jump 5 seconds after the last jump
+	 can_jump = true
+
+
+
+
+
+
+
+
+
+
+
+
+
+

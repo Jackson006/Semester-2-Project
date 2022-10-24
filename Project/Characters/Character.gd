@@ -10,6 +10,7 @@ signal hp_changed(new_hp)
 
 export(int) var acceleration: int = 40 # The character's acceleration value
 export(int) var max_speed: int = 100 # The character's maximum speed
+export(int) var max_hp: int = 2 # The character's maximum speed
 
 onready var state_machine: Node = get_node("FiniteStateMachine") # Changes the state when player takes damage
 onready var animated_sprite: AnimatedSprite = get_node("AnimatedSprite") # stores the AnimatedSprite node. This variable is used to flip the sprites

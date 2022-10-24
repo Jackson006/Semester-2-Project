@@ -1,61 +1,21 @@
-extends FiniteStateMachine
+extends Enemy
 
-# Variable for the boss's jump state
-var can_jump: bool = false
+# Called before que_freeing the slime and duplicates the slime
+func duplicate_slime() -> void:
+	# if the scale of slime is greater than 1, generate a random direction and store it in a variable
+	# called impulse_direction
+	if scale > Vector2(1, 1):
+		var impulse_direction: Vector2 = Vector2.RIGHT.rotated(rand_range(0, 2*PI))
+		# Spawns two slimes, one in the direction of the impulse and the other in the contrary direction
+		_spawn_slime(impulse_direction)
+		_spawn_slime(impulse_direction * -1)
 
-# Onready variables for the path and jump timers
-onready var path_timer: Timer = parent.get_node("PathTimer")
-onready var jump_timer: Timer = parent.get_node("JumpTimer")
-
-func _init() -> void:
-	_add_state("idle")
-	_add_state("jump")
-	_add_state("hurt")
-	_add_state("dead")
-
-# sets beginning state to idle
-func _ready() -> void:
-	set_state(states.idle)
-
-func _state_logic(_delta: float) -> void:
-	# If the slime is in the jump state, call his chase and move functions
-	if state == states.jump:
-		parent.chase()
-		parent.move()
-
-# Matches the current state
-func _get_transition() -> int:
-	match state: 
-		states.idle: # if the slime is in the idle state it can jump and sets the state to jump
-			if can_jump:
-				return states.jump
-		states.jump: # If the slime is in the jump or hurt state, set the state to idle
-			if not animation_player.is_playing():
-				return states.idle
-		states.hurt:
-			if not animation_player.is_playing():
-				return states.idle
-	return -1 # Otherwise deon't set the state and return -1
-
-func _enter_state(_previous_state: int, new_state: int) -> void: # matches the new state
-	match new_state: # plays the corresponding animations for each state
-		states.idle:
-			animation_player.play("idle")
-		states.jump:
-			path_timer.stop()
-			animation_player.play("jump")
-		states.hurt:
-			path_timer.stop()
-			animation_player.play("hurt")
-		
-
-
-
-
-
-
-
-
-
-
-
+# Spawns the slime and indicates the direction of the spawn impulse
+func _spawn_slime(direction: Vector2) -> void:
+	var slime: KinematicBody2D = load("res://Characters/Enemies/Bosses/SlimeBoss.tscn").instance()
+	slime.position = position
+	slime.scale = scale/2
+	slime.hp = max_hp/2.0
+	slime.max_hp = max_hp/2.0
+	get_parent().add_child(slime)
+	slime.velocity += direction * 150

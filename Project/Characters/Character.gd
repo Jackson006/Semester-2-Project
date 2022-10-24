@@ -5,6 +5,7 @@ const FRICTION: float= 0.15 # Controls the character's friction with the floor
 const HIT_EFFECT_SCENE: PackedScene = preload("res://Characters/HitEffect.tscn")
 
 # stores the health values of characters and defines the hp as a set variable
+export(int) var max_hp: int = 2 # The character's maximum speed
 export(int) var hp: int = 2 setget set_hp
 signal hp_changed(new_hp)
 

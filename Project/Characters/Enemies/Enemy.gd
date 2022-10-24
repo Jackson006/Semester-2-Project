@@ -7,6 +7,9 @@ onready var navigation: Navigation2D = get_tree().current_scene.get_node("Rooms"
 onready var player: KinematicBody2D = get_tree().current_scene.get_node("Player")
 onready var path_timer: Timer = get_node("PathTimer")
 
+func _ready() -> void:
+	var __ = connect("tree_exited", get_parent(), "_on_enemy_killed")
+
 func chase() -> void:
 	# if the path is not empty, create two variables: vector_to_next_point that stores the vector to the next
 	# point in the path

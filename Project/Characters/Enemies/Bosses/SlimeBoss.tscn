@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Characters/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Miscellaneous scripts/Hitbox.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/enemies/slime/slime_idle_spritesheet.png" type="Texture" id=5]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/slime shadow.png" type="Texture" id=6]
 [ext_resource path="res://Characters/Enemies/Bosses/SlimeBoss.gd" type="Script" id=7]
+[ext_resource path="res://Characters/Enemies/Bosses/SlimeBossFSM.gd" type="Script" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 5 )
@@ -215,9 +216,12 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.6 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
+"args": [  ],
+"method": "duplicate_slime"
+}, {
 "args": [  ],
 "method": "queue_free"
 } ]
@@ -384,9 +388,15 @@ radius = 5.0
 height = 8.0
 
 [node name="SlimeBoss" instance=ExtResource( 1 )]
+scale = Vector2( 8, 8 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 7 )
+max_hp = 8
+hp = 8
+
+[node name="FiniteStateMachine" parent="." index="0"]
+script = ExtResource( 8 )
 
 [node name="Shadow" type="Sprite" parent="." index="1"]
 modulate = Color( 1, 1, 1, 0.705882 )
@@ -423,3 +433,5 @@ position = Vector2( 0, 3 )
 rotation = 1.5708
 shape = SubResource( 22 )
 disabled = true
+
+[connection signal="timeout" from="JumpTimer" to="FiniteStateMachine" method="_on_JumpTimer_timeout"]

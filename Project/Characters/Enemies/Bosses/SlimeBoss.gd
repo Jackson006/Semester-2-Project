@@ -1,5 +1,15 @@
 extends Enemy
 
+# Called before que_freeing the slime and duplicates the slime
+func duplicate_slime() -> void:
+	# if the scale of slime is greater than 1, generate a random direction and store it in a variable
+	# called impulse_direction
+	if scale > Vector2(1, 1):
+		var impulse_direction: Vector2 = Vector2.RIGHT.rotated(rand_range(0, 2*PI))
+		# Spawns two slimes, one in the direction of the impulse and the other in the contrary direction
+		_spawn_slime(impulse_direction)
+		_spawn_slime(impulse_direction * -1)
+
 # Spawns the slime and indicates the direction of the spawn impulse
 func _spawn_slime(direction: Vector2) -> void:
 	var slime: KinematicBody2D = load("res://Characters/Enemies/Bosses/SlimeBoss.tscn").instance()

@@ -1,6 +1,7 @@
 extends Control
 
 var player = load("Characters/Player/Player.tscn")
+#var player2 = load() 
 
 onready var multiplayer_config_ui = $Multiplayer_configure
 onready var server_ip_address = $Multiplayer_configure/Server_ip_address

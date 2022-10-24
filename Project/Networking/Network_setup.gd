@@ -22,7 +22,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if get_tree().network_peer != null:
-		if get_tree().get_network_connected_peers().size() >= 0  and get_tree().is_network_server(): 
+		if get_tree().get_network_connected_peers().size() >= 1  and get_tree().is_network_server(): 
 			Start_game.show()
 		else:
 			Start_game.hide()

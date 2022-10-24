@@ -4,7 +4,7 @@ const speed = 300
 const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
 
 onready var dust_position: Position2D = get_node("DustPosition")
-onready var parent: Node2D = get_parent()
+onready var parent: Node = get_parent()
 
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
@@ -14,8 +14,8 @@ onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 #onready var tween = $Tween   
 
-# func _ready() -> void:
-	# _restore_previous_state()
+#func _ready() -> void:
+#	_restore_previous_state()
 
 # Restores the player's state from a previous scene
 # func _restore_previous_state() -> void:

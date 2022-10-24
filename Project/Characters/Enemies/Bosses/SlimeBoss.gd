@@ -45,13 +45,16 @@ func _enter_state(_previous_state: int, new_state: int) -> void: # matches the n
 			path_timer.stop()
 			animation_player.play("jump")
 		states.hurt:
-			path_timer.stop()
 			animation_player.play("hurt")
-		
+		states.dead:
+			animation_player.play("dead")
 
-
-
-
+# When the slime exits the jump state, set the can_jump to false and start the path timer
+func _exit_state(state_exited: int) -> void:
+	if state_exited == states.jump:
+		can_jump = false
+		path_timer.start()
+		jump_timer.start()
 
 
 

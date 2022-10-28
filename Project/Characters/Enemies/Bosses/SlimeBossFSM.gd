@@ -59,17 +59,3 @@ func _exit_state(state_exited: int) -> void:
 
 func _on_JumpTimer_timeout(): # Enables the slime to jump 5 seconds after the last jump
 	 can_jump = true
-
-
-
-
-
-
-
-
-
-
-
-
-
-

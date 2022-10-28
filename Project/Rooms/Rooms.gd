@@ -8,6 +8,7 @@ const SPAWN_ROOMS: Array = [preload("res://Rooms/SpawnRoom0.tscn"), preload("res
 const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"), preload("res://Rooms/Room2.tscn"), preload("res://Rooms/Room3.tscn")]
 # The end rooms constant is the room that is placed at the end of the level
 const END_ROOMS: Array = [preload("res://Rooms/EndRoom0.tscn")]
+const SLIME_BOSS_SCENE: PackedScene = preload("res://Rooms/BossRoom.tscn")
 
 # These constants store the size of the tiles and which tiles from the tilemap are used for the walls and floors
 const TILE_SIZE: int = 16
@@ -15,7 +16,7 @@ const FLOOR_TILE_INDEX: int = 22
 const RIGHT_WALL_TILE_INDEX: int = 6
 const LEFT_WALL_TILE_INDEX: int = 7
 
-# This variable is the number of rooms that are generated at the beginning of the game
+# This variable is the number of rooms that are generated at the beginning of the game = 8
 export(int) var num_levels: int = 8 
 
 # This variable stores the player scene for the procedural generation
@@ -23,6 +24,9 @@ onready var player: KinematicBody2D = get_parent().get_node("Player")
 
 # This function rrandomly spawns rooms at the beginning of the game
 func _ready() -> void:
+	SavedData.num_floor += 1
+	if SavedData.num_floor == 3:
+		num_levels = 3
 	_spawn_rooms()
 	
 
@@ -43,11 +47,14 @@ func _spawn_rooms() -> void:
 			player.position = room.get_node("PlayerSpawnPos").position #Spawns the player in the player position in the spawn rooms
 		# checks if this is the last room, if so, it chooses a random room from the END_ROOMS array
 		else:
-			if i == num_levels -1:
-				room = END_ROOMS[randi() % END_ROOMS.size()].instance()
-			# checks if this is an intermediate room, if so, it chooses a random room from the INTERMEDIATE_ROOMS array
-			else:
-				room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()].instance()
+			if SavedData.num_floor == 3: 
+				room = SLIME_BOSS_SCENE.instance()
+			else: 
+				if i == num_levels -1:
+					room = END_ROOMS[randi() % END_ROOMS.size()].instance()
+				# checks if this is an intermediate room, if so, it chooses a random room from the INTERMEDIATE_ROOMS array
+				else:
+					room = INTERMEDIATE_ROOMS[randi() % INTERMEDIATE_ROOMS.size()].instance()
 				
 			# if the room is not the spawn room, it is connected to the last room
 			# These rooms store the tilemap of the previous room, door, and tile position, then starts making a corridor

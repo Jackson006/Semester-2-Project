@@ -14,12 +14,12 @@ onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 #onready var tween = $Tween   
 
-#func _ready() -> void:
-#	_restore_previous_state()
+func _ready() -> void:
+	_restore_previous_state()
 
 # Restores the player's state from a previous scene
-# func _restore_previous_state() -> void:
-	# self.hp = SavedData.hp
+func _restore_previous_state() -> void:
+	self.hp = SavedData.hp
 
 # warning-ignore:unused_argument
 func _process(delta: float) -> void: #stores the direction of the mouse relative to the player

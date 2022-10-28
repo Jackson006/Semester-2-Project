@@ -7,8 +7,8 @@
 [ext_resource path="res://Characters/Playerattack.tres" type="Animation" id=5]
 
 [sub_resource type="CapsuleShape2D" id=18]
-radius = 2.00002
-height = 12.0
+radius = 3.00002
+height = 11.9999
 
 [sub_resource type="Animation" id=17]
 length = 0.001

@@ -4,8 +4,8 @@ extends FiniteStateMachine
 var can_jump: bool = false
 
 # Onready variables for the path and jump timers
-onready var path_timer: Timer = parent.get_node("PathTimer")
 onready var jump_timer: Timer = parent.get_node("JumpTimer")
+onready var hitbox: Area2D = parent.get_node("Hitbox")
 
 func _init() -> void:
 	_add_state("idle")
@@ -42,7 +42,9 @@ func _enter_state(_previous_state: int, new_state: int) -> void: # matches the n
 		states.idle:
 			animation_player.play("idle")
 		states.jump:
-			path_timer.stop()
+			if is_instance_valid(parent.player):
+				parent.path = [parent.global_position, parent.player.position]
+			hitbox.knockback_direction = (parent.path[1] - parent.path[0]).normalized()
 			animation_player.play("jump")
 		states.hurt:
 			animation_player.play("hurt")
@@ -53,7 +55,6 @@ func _enter_state(_previous_state: int, new_state: int) -> void: # matches the n
 func _exit_state(state_exited: int) -> void:
 	if state_exited == states.jump:
 		can_jump = false
-		path_timer.start()
 		jump_timer.start()
 
 func _on_JumpTimer_timeout(): # Enables the slime to jump 5 seconds after the last jump

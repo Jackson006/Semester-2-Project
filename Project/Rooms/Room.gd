@@ -66,5 +66,6 @@ func _on_PlayerDetector_body_entered(_body: KinematicBody2D) -> void:
 	else: 
 		_open_doors()
 
-
+func _game_over() -> void:
+	get_tree().change_scene("res://Main_Menu.tscn")
 

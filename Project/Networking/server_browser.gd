@@ -1,6 +1,6 @@
 extends Control
 
-onready var server_listener = $Server_listener 
+onready var server_listener = $server_listener 
 onready var server_ip_text_edit = $background_panel/Server_ip_text_edit
 onready var server_container = $background_panel/VBoxContainer
 onready var manual_setup_button = $background_panel/Manual_setup

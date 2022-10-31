@@ -51,8 +51,9 @@ stream = ExtResource( 3 )
 volume_db = -5.0
 
 [node name="Main" type="VBoxContainer" parent="."]
+margin_top = 8.0
 margin_right = 480.0
-margin_bottom = 269.0
+margin_bottom = 277.0
 
 [node name="Title" type="HBoxContainer" parent="Main"]
 margin_right = 480.0

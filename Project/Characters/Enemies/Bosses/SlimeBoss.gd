@@ -25,3 +25,6 @@ func _spawn_slime(direction: Vector2) -> void:
 	slime.max_hp = max_hp/2.0
 	get_parent().add_child(slime)
 	slime.velocity += direction * 150
+
+func _you_win() -> void:
+	get_tree().change_scene("res://Main_Menu.tscn")

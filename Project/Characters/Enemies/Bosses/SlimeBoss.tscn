@@ -208,10 +208,10 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
-"method": "duplicate_slime"
+"method": "_you_win"
 }, {
 "args": [  ],
-"method": "queue_free"
+"method": "duplicate_slime"
 } ]
 }
 tracks/4/type = "value"
@@ -421,7 +421,7 @@ anims/jump = SubResource( 21 )
 autostart = false
 
 [node name="JumpTimer" type="Timer" parent="." index="7"]
-wait_time = 5.0
+wait_time = 2.0
 one_shot = true
 autostart = true
 

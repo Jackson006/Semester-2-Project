@@ -26,7 +26,7 @@ func _ready():
 		print("GameServer Lan service: Listening on port: " + str(listen_port))
 
 func _process(delta):
-	if socket_udp.get_availavle_packet_count() > 0:
+	if socket_udp.get_available_packet_count() > 0:
 		var server_ip = socket_udp.get_packet_ip()
 		var server_port = socket_udp.get_packet_port()
 		var array_bytes = socket_udp.get_packet()

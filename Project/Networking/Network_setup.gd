@@ -36,6 +36,8 @@ func _player_connected(id) -> void:
 func _player_disconnected(id) -> void:
 	print("player " + str(id) + "has disconnected")
 	
+
+
 	if Players.has_node(str(id)):
 		Players.get_node(str(id)).queue_free()
 
@@ -60,6 +62,7 @@ func instance_player(id) -> void:
 	var player_instance = Global.instance_node_at_location(player, Players, Vector2(160, 176))
 	player_instance.name = str(id)
 	player_instance.set_network_master(id)
+	player_instance.username = username_text_edit.text
 
 func _on_Start_game_pressed():
 	rpc("_switch_to_game")

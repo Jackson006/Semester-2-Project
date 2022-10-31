@@ -3,9 +3,11 @@ extends Character
 const speed = 300
 const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
 
+
 onready var dust_position: Position2D = get_node("DustPosition")
 onready var parent: Node = get_parent()
 
+#puppet var puppet_username = "" setget puppet_username_set
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotation = 0
@@ -13,10 +15,22 @@ onready var sword: Node2D = get_node("Sword") # gets the sword node
 onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
 onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 #onready var tween = $Tween   
+#var username setget username_set
+var username_text_instance = null
+var username_text = load("res://Networking/username_text.tscn")
 
 func _ready() -> void:
 	_restore_previous_state()
 
+	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
+
+#	username_text_instance = Global.instance_node_at_location(username_text, Persistent_nodes, global_position)
+#	username_text_instance.player_following = self
+	
+
+	if username_text_instance != null:
+		username_text_instance.name = "username" + name
+	
 # Restores the player's state from a previous scene
 func _restore_previous_state() -> void:
 	self.hp = SavedData.hp
@@ -53,7 +67,8 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		
 		# if not tween.is_active():
 			# move_and_slide(puppet_velocity * speed)
-		
+	if username_text_instance != null:
+		username_text_instance.name = "username" + name
 		
 func get_input() -> void: # This function is called to get the player's inputmn 
 		mov_direction = Vector2.ZERO

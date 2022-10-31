@@ -117,5 +117,8 @@ anims/Serching = SubResource( 2 )
 
 [node name="server_listener" parent="." instance=ExtResource( 2 )]
 
+[connection signal="pressed" from="background_panel/Manual_setup" to="." method="_on_Manual_setup_pressed"]
+[connection signal="pressed" from="background_panel/Go_Back" to="." method="_on_Go_Back_pressed"]
+[connection signal="pressed" from="background_panel/Join_Server" to="." method="_on_Join_Server_pressed"]
 [connection signal="new_server" from="server_listener" to="." method="_on_server_listener_new_server"]
 [connection signal="remove_server" from="server_listener" to="." method="_on_server_listener_remove_server"]

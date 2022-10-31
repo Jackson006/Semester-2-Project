@@ -47,7 +47,7 @@ func clean_up():
 	var now = OS.get_unix_time()
 	for server_ip in known_servers:
 		var serverInfo = known_servers[server_ip]
-		if (now - serverInfo.lastSeen) > server_cleSnup_threshold:
+		if (now - serverInfo.lastSeen) > server_cleanup_threshold:
 			known_servers.erase(server_ip)
 			print('Remove old server: %' % server_ip)
 			emit_signal("remove_server",server_ip)

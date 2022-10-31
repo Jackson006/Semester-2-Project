@@ -10,7 +10,7 @@ func _ready() -> void:
 
 func _on_server_listener_new_server(serverInfo):
 	var server_node = Global.instance_node(load("res://Networking/Server_display.tscn"), server_container)
-	server_node.text = "%S - %S" % [serverInfo.ip, serverInfo.name]
+	server_node.text = "%s - %s" % [serverInfo.ip, serverInfo.name]
 	server_node.ip_address = str(serverInfo.ip )
 
 func _on_server_listener_remove_server(serverIp):

@@ -79,16 +79,16 @@ text = "The Binding of Trevor"
 align = 1
 valign = 1
 
-[node name="Buttons" type="HBoxContainer" parent="Main"]
-margin_top = 20.0
-margin_right = 480.0
-margin_bottom = 42.0
+[node name="Buttons" type="HBoxContainer" parent="."]
+margin_left = 200.0
+margin_top = 112.0
+margin_right = 680.0
+margin_bottom = 134.0
 
-[node name="Play" type="Button" parent="Main/Buttons"]
-margin_right = 480.0
+[node name="Play" type="Button" parent="Buttons"]
+margin_right = 76.0
 margin_bottom = 22.0
-size_flags_horizontal = 3
 custom_fonts/font = SubResource( 3 )
 text = "Play"
 
-[connection signal="pressed" from="Main/Buttons/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_Play_pressed"]

@@ -27,4 +27,4 @@ func _spawn_slime(direction: Vector2) -> void:
 	slime.velocity += direction * 150
 
 func _you_win() -> void:
-	get_tree().change_scene("res://Main_Menu.tscn")
+	SceneTransistor.start_transition_to("res://Main_Menu.tscn")

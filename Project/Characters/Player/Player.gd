@@ -24,8 +24,8 @@ func _ready() -> void:
 
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 
-#	username_text_instance = Global.instance_node_at_location(username_text, Persistent_nodes, global_position)
-#	username_text_instance.player_following = self
+	#username_text_instance = Global.instance_node_at_location(username_text, Persistent_nodes, global_position)
+	#username_text_instance.player_following = self
 	
 
 	if username_text_instance != null:

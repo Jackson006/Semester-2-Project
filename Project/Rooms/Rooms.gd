@@ -5,7 +5,7 @@ extends Navigation2D
 # The Spawn rooms constant are the rooms that are placed at the start of the level
 const SPAWN_ROOMS: Array = [preload("res://Rooms/SpawnRoom0.tscn"), preload("res://Rooms/SpawnRoom1.tscn")]
 # The intermidiate rooms are the rooms that are placed in the middle of the level
-const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"), preload("res://Rooms/Room2.tscn"), preload("res://Rooms/Room3.tscn"), preload("res://Rooms/Room4.tscn")]
+const INTERMEDIATE_ROOMS: Array = [preload("res://Rooms/Room0.tscn"), preload("res://Rooms/Room1.tscn"), preload("res://Rooms/Room2.tscn"), preload("res://Rooms/Room3.tscn"), preload("res://Rooms/Room4.tscn"), preload("res://Rooms/Room5.tscn")]
 # The end rooms constant is the room that is placed at the end of the level
 const END_ROOMS: Array = [preload("res://Rooms/EndRoom0.tscn")]
 const SLIME_BOSS_SCENE: PackedScene = preload("res://Rooms/BossRoom.tscn")

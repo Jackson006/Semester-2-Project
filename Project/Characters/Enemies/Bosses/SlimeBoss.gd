@@ -6,6 +6,7 @@ func _process(_delta: float) -> void:
 	else:
 		z_index = 1
 
+
 # Called before que_freeing the slime and duplicates the slime
 func duplicate_slime() -> void:
 	# if the scale of slime is greater than 1, generate a random direction and store it in a variable

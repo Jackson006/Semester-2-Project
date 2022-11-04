@@ -32,6 +32,7 @@ script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 219, 238 )
+max_hp = 4
 hp = 4
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

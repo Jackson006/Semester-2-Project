@@ -47,7 +47,7 @@ func take_damage(dam: int, dir: Vector2, force: int) -> void: # Makes characters
 # Function is called automatically every time the value of the hp variable is modified
 func set_hp(new_hp: int) -> void:
 	# updates the hp variable and emits the signal hp_changed with new_hp as paramenter
-	hp = new_hp
+	hp = clamp(new_hp, 0, max_hp)
 	emit_signal("hp_changed", new_hp)
 
 func _spawn_hit_effect() -> void:

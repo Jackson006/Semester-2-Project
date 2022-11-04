@@ -11,7 +11,7 @@ onready var health_bar_tween: Tween = get_node("HealthBar/Tween")
 
 # ready function changes the value of the max_hp to the player hp. Makes the max the initial value
 func _ready() -> void:
-	max_hp = player.hp
+	max_hp = player.max_hp
 	# Fills the health bar using the _update_health_bar function with 100 as the parameter
 	_update_health_bar(100)
 

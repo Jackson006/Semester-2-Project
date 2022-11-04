@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rooms/Furniture and Traps/Stairs.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Rooms/Furniture and Traps/Torch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Rooms/Items/HealthPotion.tscn" type="PackedScene" id=4]
 
 [node name="EndRoom0" instance=ExtResource( 1 )]
 
@@ -35,3 +36,9 @@ position = Vector2( 24, 88 )
 
 [node name="Torch4" parent="." index="11" instance=ExtResource( 3 )]
 position = Vector2( 168, 88 )
+
+[node name="HealthPotion" parent="." index="12" instance=ExtResource( 4 )]
+position = Vector2( 40, 88 )
+
+[node name="HealthPotion2" parent="." index="13" instance=ExtResource( 4 )]
+position = Vector2( 152, 88 )

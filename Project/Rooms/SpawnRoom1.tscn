@@ -45,6 +45,8 @@ position = Vector2( 160, 176 )
 
 [node name="Torch" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( 88, 56 )
+shadow_enabled = true
 
 [node name="Torch2" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 136, 56 )
+shadow_enabled = true

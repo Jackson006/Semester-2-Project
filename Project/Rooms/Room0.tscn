@@ -40,6 +40,8 @@ shape = SubResource( 1 )
 
 [node name="Torch" parent="." index="7" instance=ExtResource( 2 )]
 position = Vector2( 40, 24 )
+shadow_enabled = true
 
 [node name="Torch2" parent="." index="8" instance=ExtResource( 2 )]
 position = Vector2( 88, 24 )
+shadow_enabled = true

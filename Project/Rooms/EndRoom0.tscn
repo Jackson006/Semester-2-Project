@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rooms/Furniture and Traps/Stairs.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rooms/Furniture and Traps/Torch.tscn" type="PackedScene" id=3]
 
 [node name="EndRoom0" instance=ExtResource( 1 )]
 
@@ -12,7 +13,7 @@ tile_data = PoolIntArray( 65539, 11, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 6
 tile_data = PoolIntArray( 524289, 2, 0, 524290, 2, 0, 524291, 2, 0, 524292, 3, 0, 524295, 1, 0, 524296, 2, 0, 524297, 2, 0, 524298, 2, 0 )
 
 [node name="FurnitureTileMap" parent="." index="2"]
-tile_data = PoolIntArray( 262146, 41, 0, 262153, 41, 0, 393226, 42, 0, 458761, 42, 0, 458762, 42, 0 )
+tile_data = PoolIntArray( 262146, 41, 0, 262153, 41, 0 )
 
 [node name="Position2D" type="Position2D" parent="Entrance" index="0"]
 position = Vector2( 88, 136 )
@@ -22,3 +23,15 @@ position = Vector2( 104, 136 )
 
 [node name="Stairs" parent="." index="7" instance=ExtResource( 2 )]
 position = Vector2( 88, 56 )
+
+[node name="Torch" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 72, 40 )
+
+[node name="Torch2" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 120, 40 )
+
+[node name="Torch3" parent="." index="10" instance=ExtResource( 3 )]
+position = Vector2( 24, 88 )
+
+[node name="Torch4" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 168, 88 )

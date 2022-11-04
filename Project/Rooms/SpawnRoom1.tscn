@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Rooms/Room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Rooms/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Rooms/Furniture and Traps/Torch.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 24 )
@@ -41,3 +42,9 @@ shape = SubResource( 1 )
 
 [node name="PlayerSpawnPos" type="Position2D" parent="." index="7"]
 position = Vector2( 160, 176 )
+
+[node name="Torch" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( 88, 56 )
+
+[node name="Torch2" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 136, 56 )

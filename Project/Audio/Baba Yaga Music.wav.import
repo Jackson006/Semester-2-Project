@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Baba Yaga Music.wav-a5f16d9226f9e5a703b5bb1519a29219.sample"
+
+[deps]
+
+source_file="res://Audio/Baba Yaga Music.wav"
+dest_files=[ "res://.import/Baba Yaga Music.wav-a5f16d9226f9e5a703b5bb1519a29219.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

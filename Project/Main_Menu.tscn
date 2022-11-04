@@ -38,14 +38,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -240.0
-margin_top = -86.0
+margin_top = -78.0
 margin_right = 240.0
-margin_bottom = 25.0
+margin_bottom = 2.0
 
 [node name="Controls" type="Label" parent="Text2"]
-margin_top = 28.0
+margin_top = 13.0
 margin_right = 480.0
-margin_bottom = 82.0
+margin_bottom = 67.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 text = "W = Up / A = Left / D = Right / S = down
@@ -66,7 +66,7 @@ volume_db = -5.0
 [node name="Main" type="VBoxContainer" parent="."]
 margin_top = 8.0
 margin_right = 480.0
-margin_bottom = 277.0
+margin_bottom = 272.0
 
 [node name="Title" type="HBoxContainer" parent="Main"]
 margin_right = 480.0
@@ -84,7 +84,7 @@ valign = 1
 [node name="Buttons" type="HBoxContainer" parent="."]
 margin_left = 200.0
 margin_top = 168.0
-margin_right = 680.0
+margin_right = 276.0
 margin_bottom = 190.0
 
 [node name="Play" type="Button" parent="Buttons"]

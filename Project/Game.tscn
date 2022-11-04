@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Audio/Main Game Music.wav" type="AudioStream" id=1]
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/health_ui.png" type="Texture" id=5]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/ui (new)/progress bar.png" type="Texture" id=6]
 [ext_resource path="res://Miscellaneous scripts/UI.gd" type="Script" id=7]
+[ext_resource path="res://Images/Pure_black_wallpaper.png" type="Texture" id=8]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -37,5 +38,13 @@ hp = 4
 stream = ExtResource( 1 )
 volume_db = -20.0
 autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+margin_left = -1064.0
+margin_top = -3716.0
+margin_right = 1816.0
+margin_bottom = 372.0
+texture = ExtResource( 8 )
 
 [connection signal="hp_changed" from="Player" to="UI" method="_on_Player_hp_changed"]

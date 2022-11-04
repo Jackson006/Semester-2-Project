@@ -27,7 +27,7 @@ anchor_bottom = 0.5
 margin_left = -240.0
 margin_top = -135.0
 margin_right = 240.0
-margin_bottom = 120.0
+margin_bottom = 135.0
 expand = true
 
 [node name="Text2" type="HBoxContainer" parent="."]

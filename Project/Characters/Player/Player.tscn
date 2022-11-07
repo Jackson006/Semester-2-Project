@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Characters/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Characters/Player/idle.tres" type="Animation" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://Characters/Player/FiniteStateMachine.gd" type="Script" id=5]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_idle_spritesheet.png" type="Texture" id=6]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/heroes/knight/knight_run_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://Characters/Player/Sword.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Art/v1.1 dungeon crawler 16x16 pixel pack/effects (new)/enemy_afterdead_explosion_anim_spritesheet.png" type="Texture" id=12]
 [ext_resource path="res://Audio/Walk.wav" type="AudioStream" id=14]
 
@@ -257,14 +256,14 @@ animation = "idle"
 position = Vector2( 0, 3 )
 shape = SubResource( 16 )
 
-[node name="Sword" parent="." index="3" instance=ExtResource( 8 )]
-
-[node name="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" parent="." index="3"]
 anims/Idle = ExtResource( 2 )
 anims/Move = ExtResource( 3 )
 anims/RESET = SubResource( 15 )
 anims/dead = SubResource( 24 )
 anims/hurt = SubResource( 19 )
+
+[node name="Weapons" type="Node2D" parent="." index="4"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 current = true

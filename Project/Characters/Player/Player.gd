@@ -3,17 +3,16 @@ extends Character
 const speed = 300
 const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
 
+var current_weapon: Node2D
 
 onready var dust_position: Position2D = get_node("DustPosition")
 onready var parent: Node = get_parent()
+onready var weapons: Node2D = get_node("Weapons")
 
 #puppet var puppet_username = "" setget puppet_username_set
 puppet var puppet_position = Vector2(0, 0) setget puppet_position_set
 puppet var puppet_velocity = Vector2()
 puppet var puppet_rotation = 0
-onready var sword: Node2D = get_node("Sword") # gets the sword node
-onready var sword_hitbox: Area2D = get_node("Sword/Node2D/Sprite/Hitbox")
-onready var sword_animation_player: AnimationPlayer = sword.get_node("SwordAnimationPlayer")
 #onready var tween = $Tween   
 #var username setget username_set
 var username_text_instance = null
@@ -21,6 +20,7 @@ var username_text = load("res://Networking/username_text.tscn")
 
 func _ready() -> void:
 	_restore_previous_state()
+	current_weapon = weapons.get_child(0)
 
 	get_tree().connect("network_peer_connected", self, "_network_peer_connected")
 
@@ -45,8 +45,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		animated_sprite.flip_h = false
 	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true
-	sword.rotation = mouse_direction.angle() # updates the rotation of the sword using the angle of the mouse's direction
-	sword_hitbox.knockback_direction = mouse_direction# sets the knockback direction to the mouse's direction
+	current_weapon.move()
 		# Keeps the sword the right way up regardless of the mouse's direction
 	if sword.scale.y == 1 and mouse_direction.x < 0:
 		sword.scale.y = -1
@@ -81,9 +80,7 @@ func get_input() -> void: # This function is called to get the player's inputmn
 		if Input.is_action_pressed("ui_up"): # if the ui up action is triggered, increase the mov_direction with a vector of the same direction
 			mov_direction += Vector2.UP
 		
-		if Input.is_action_just_pressed("ui_attack") and not sword_animation_player.is_playing():
-			$Sword/SwordSwing.play()
-			sword_animation_player.play("attack")
+		current_weapon.get_input()
 
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value

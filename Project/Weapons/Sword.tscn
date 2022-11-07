@@ -20,6 +20,7 @@ shape = SubResource( 1 )
 disabled = false
 
 [node name="SlashSprite" type="Sprite" parent="." index="1"]
+visible = false
 position = Vector2( 18, 0 )
 texture = ExtResource( 4 )
 hframes = 3

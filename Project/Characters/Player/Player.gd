@@ -45,7 +45,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		animated_sprite.flip_h = false
 	elif mouse_direction.x < 0 and not animated_sprite.flip_h:
 		animated_sprite.flip_h = true
-	current_weapon.move()
+	current_weapon.move(mouse_direction)
 	# checks if the attack input has been pressed and the sword animation is playing and if so plays the animation
 	if is_network_master():
 		var x_input = int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")) 

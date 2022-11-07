@@ -17,7 +17,6 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="Node2D/Sprite/Hitbox" index="0"]
 shape = SubResource( 1 )
-disabled = false
 
 [node name="SlashSprite" type="Sprite" parent="." index="1"]
 visible = false

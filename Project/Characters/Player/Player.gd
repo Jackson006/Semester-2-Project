@@ -1,5 +1,7 @@
 extends Character
 
+enum {UP, DOWN}
+
 const speed = 300
 const DUST_SCENE: PackedScene = preload("res://Characters/Player/Dust.tscn")
 
@@ -52,9 +54,7 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		var y_input = int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
 		
 		velocity = Vector2(x_input, y_input).normalized()
-		
 		move_and_slide(velocity * speed)
-		
 		look_at(get_global_mouse_position())
 	# else:
 		#rotation_degrees = lerp(rotaion_degrees, puppet_rotation, delta * 8)  #not working idk why find out later 
@@ -65,16 +65,35 @@ func _process(delta: float) -> void: #stores the direction of the mouse relative
 		username_text_instance.name = "username" + name
 		
 func get_input() -> void: # This function is called to get the player's inputmn 
-		mov_direction = Vector2.ZERO
-		if Input.is_action_pressed("ui_down"): # if the ui down action is triggered, increase the mov_direction with a vector of the same direction
-			mov_direction +=Vector2.DOWN
-		if Input.is_action_pressed("ui_left"): # if the ui left action is triggered, increase the mov_direction with a vector of the same direction
-			mov_direction += Vector2.LEFT
-		if Input.is_action_pressed("ui_right"): # if the ui right action is triggered, increase the mov_direction with a vector of the same direction
-			mov_direction += Vector2.RIGHT
-		if Input.is_action_pressed("ui_up"): # if the ui up action is triggered, increase the mov_direction with a vector of the same direction
-			mov_direction += Vector2.UP
-		current_weapon.get_input()
+	mov_direction = Vector2.ZERO
+	if Input.is_action_pressed("ui_down"): # if the ui down action is triggered, increase the mov_direction with a vector of the same direction
+		mov_direction +=Vector2.DOWN
+	if Input.is_action_pressed("ui_left"): # if the ui left action is triggered, increase the mov_direction with a vector of the same direction
+		mov_direction += Vector2.LEFT
+	if Input.is_action_pressed("ui_right"): # if the ui right action is triggered, increase the mov_direction with a vector of the same direction
+		mov_direction += Vector2.RIGHT
+	if Input.is_action_pressed("ui_up"): # if the ui up action is triggered, increase the mov_direction with a vector of the same direction
+		mov_direction += Vector2.UP
+	if not current_weapon.is_busy():
+		if Input.is_action_just_released("ui_previous_weapon"):
+			_switch_weapon(UP)
+		elif Input.is_action_just_released("ui_next_weapon"):
+			_switch_weapon(DOWN)
+	current_weapon.get_input()
+
+func _switch_weapon(direction: int) -> void:
+	var index: int = current_weapon.get_index()
+	if direction == UP:
+		index -= 1
+		if index <0:
+			index = weapons.get_child_count() - 1
+		else: 
+			index += 1
+			if index > weapons.get_child_count() - 1:
+				index = 0
+	current_weapon.hide()
+	current_weapon = weapons.get_child(index)
+	current_weapon.show()
 
 func puppet_position_set(new_value) -> void:
 	puppet_position = new_value

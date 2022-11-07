@@ -43,13 +43,13 @@ margin_right = 240.0
 margin_bottom = 2.0
 
 [node name="Controls" type="Label" parent="Text2"]
-margin_top = 13.0
+margin_top = 3.0
 margin_right = 480.0
-margin_bottom = 67.0
+margin_bottom = 76.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 1 )
 text = "W = Up / A = Left / D = Right / S = down
-Mouse 1 = Attack"
+Mouse Wheel = Change Weapon Mouse 1 = Attack"
 align = 1
 valign = 1
 autowrap = true

@@ -74,7 +74,6 @@ func get_input() -> void: # This function is called to get the player's inputmn
 			mov_direction += Vector2.RIGHT
 		if Input.is_action_pressed("ui_up"): # if the ui up action is triggered, increase the mov_direction with a vector of the same direction
 			mov_direction += Vector2.UP
-		
 		current_weapon.get_input()
 
 func puppet_position_set(new_value) -> void:

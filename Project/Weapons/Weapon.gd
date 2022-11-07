@@ -7,7 +7,7 @@ onready var hitbox: Area2D = get_node("Node2D/Sprite/Hitbox")
 
 func get_input() -> void:
 	if Input.is_action_just_pressed("ui_attack") and not animation_player.is_playing():
-		$Sword/SwordSwing.play()
+		$SwordSwing.play()
 		animation_player.play("attack")
 
 func move(mouse_direction: Vector2) -> void:

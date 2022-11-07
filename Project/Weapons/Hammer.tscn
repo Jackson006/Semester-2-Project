@@ -6,8 +6,8 @@
 [ext_resource path="res://Audio/Sword Swing.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 7.00001
-height = 3.99996
+radius = 5.18895
+height = 7.50799
 
 [sub_resource type="Animation" id=2]
 length = 0.001

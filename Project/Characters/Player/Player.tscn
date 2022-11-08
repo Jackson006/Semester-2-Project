@@ -270,6 +270,7 @@ anims/hurt = SubResource( 19 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="5"]
 current = true
+smoothing_speed = 1.0
 
 [node name="Network_tick_rate" type="Timer" parent="." index="6"]
 wait_time = 0.05

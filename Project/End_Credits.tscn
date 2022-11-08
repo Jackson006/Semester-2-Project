@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Images/Gates.png" type="Texture" id=1]
+[ext_resource path="res://Images/Credits.png" type="Texture" id=1]
 [ext_resource path="res://Game_Over.gd" type="Script" id=2]
 [ext_resource path="res://Audio/Mouse Click.wav" type="AudioStream" id=3]
 [ext_resource path="res://Fonts/Press_Start_2P/PressStart2P-Regular.ttf" type="DynamicFontData" id=4]
@@ -56,19 +56,20 @@ custom_fonts/font = SubResource( 3 )
 text = "Return To Menu"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 160.0
+margin_left = 176.0
 margin_top = 16.0
-margin_right = 320.0
+margin_right = 336.0
 margin_bottom = 32.0
 custom_fonts/font = SubResource( 4 )
 text = "The End..."
 
 [node name="Label2" type="Label" parent="."]
-margin_top = 32.0
-margin_right = 160.0
-margin_bottom = 48.0
+margin_top = 72.0
+margin_right = 480.0
+margin_bottom = 183.0
 custom_fonts/font = SubResource( 4 )
 text = "Credits:
+Designers:   Jackson & Phoenix
 Art:                 O_lobster
 SFX:              artisticdude
 Main BGM:           Eric Skiff

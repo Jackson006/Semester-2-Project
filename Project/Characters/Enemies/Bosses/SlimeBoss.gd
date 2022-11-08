@@ -28,4 +28,4 @@ func _spawn_slime(direction: Vector2) -> void:
 	slime.velocity += direction * 150
 
 func _you_win() -> void:
-	SceneTransistor.start_transition_to("res://Game_Over.tscn")
+	SceneTransistor.start_transition_to("res://End_Credits.tscn")

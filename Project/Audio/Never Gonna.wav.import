@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Never Gonna.wav-a7fb50f3f0b804458139073474234ade.sample"
+
+[deps]
+
+source_file="res://Audio/Never Gonna.wav"
+dest_files=[ "res://.import/Never Gonna.wav-a7fb50f3f0b804458139073474234ade.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

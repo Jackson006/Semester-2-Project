@@ -43,7 +43,6 @@ margin_right = 480.0
 margin_bottom = 277.0
 
 [node name="Buttons" type="HBoxContainer" parent="."]
-visible = false
 margin_left = 120.0
 margin_top = 224.0
 margin_right = 356.0

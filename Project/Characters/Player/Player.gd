@@ -116,6 +116,6 @@ func _spawn_dust() -> void:
 	parent.add_child_below_node(parent.get_child(get_index() - 1), dust)
 
 func _game_over() -> void:
-	SceneTransistor.start_transition_to("res://Game_Over.tscn")
+	SceneTransistor.start_transition_to("res://Bad_Ending.tscn")
 
 
